@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 namespace EchoNest.Artist
 {
     [DataContract]
-    public class SuggestResponse : Response
+    public class SuggestArtistResponse : Response
     {
         [DataMember(Name = "artists")]
-        public List<SuggestArtist> Artists { get; set; }
+        public List<SuggestArtistItem> Artists { get; set; }
     }
 }
