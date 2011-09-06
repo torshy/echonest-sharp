@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artist\Biography.cs" />
     <Compile Include="Artist\SuggestArtist.cs" />
     <Compile Include="Artist\SuggestResponse.cs" />
     <Compile Include="EchoNestService.cs" />

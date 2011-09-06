@@ -1,14 +1,20 @@
 using System;
 using System.Net.Http;
-using EchoNest.Artist;
 
 namespace EchoNest
 {
     public sealed class EchoNestSession : IDisposable
     {
+        #region Fields
+
         private readonly string _apiKey;
         private readonly string _baseUrl = "http://developer.echonest.com/api/v4/";
+
         private HttpClient _httpClient;
+
+        #endregion Fields
+
+        #region Constructors
 
         public EchoNestSession(string apiKey)
         {
@@ -16,8 +22,12 @@ namespace EchoNest
             _httpClient = new HttpClient(_baseUrl);
         }
 
-        void  IDisposable.Dispose()
-        {            
+        #endregion Constructors
+
+        #region Methods
+
+        void IDisposable.Dispose()
+        {
             if (_httpClient != null)
             {
                 _httpClient.Dispose();
@@ -25,7 +35,8 @@ namespace EchoNest
             }
         }
 
-        public T Query<T>() where T : EchoNestService, new()
+        public T Query<T>()
+            where T : EchoNestService, new()
         {
             return new T
                        {
@@ -33,6 +44,7 @@ namespace EchoNest
                            HttpClient = _httpClient
                        };
         }
-    }
 
+        #endregion Methods
+    }
 }
