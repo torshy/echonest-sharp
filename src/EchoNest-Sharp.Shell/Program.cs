@@ -18,11 +18,18 @@ namespace EchoNest.Shell
             
             using(var session = new EchoNestSession(apiKey))
             {
-                var result = session.Query<Suggest>().Execute("NO", 50);
+                var result = session.Query<Suggest>().Execute("no", 50);
 
-                foreach (var artist in result.Artists)
+                if (result.Status.Code == ResponseCode.Success)
                 {
-                    Console.WriteLine(artist.Name);
+                    foreach (var item in result.Artists)
+                    {
+                        Console.WriteLine(item.Name + " [" + item.ID + "]");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(result.Status.Message);
                 }
             }
 

@@ -48,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist\Biography.cs" />
+    <Compile Include="Artist\BiographyItem.cs" />
+    <Compile Include="Artist\BiographyResponse.cs" />
+    <Compile Include="Artist\Blog.cs" />
+    <Compile Include="Artist\BlogItem.cs" />
+    <Compile Include="Artist\BlogResponse.cs" />
     <Compile Include="Artist\SuggestArtist.cs" />
     <Compile Include="Artist\SuggestResponse.cs" />
     <Compile Include="EchoNestService.cs" />
