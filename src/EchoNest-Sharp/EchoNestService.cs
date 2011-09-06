@@ -26,6 +26,11 @@ namespace EchoNest
 
         #region Methods
 
+        protected UriQuery Build(string url)
+        {
+            return new UriQuery(url);
+        }
+
         protected T Execute<T>(string url, params object[] arguments)
             where T : class
         {

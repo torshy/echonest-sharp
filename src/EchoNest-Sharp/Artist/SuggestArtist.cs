@@ -6,7 +6,7 @@ namespace EchoNest.Artist
     {
         #region Fields
 
-        private const string SuggestUrl = "artist/suggest?api_key={0}&name={1}&results={2}";
+        private const string Url = "artist/suggest";
 
         #endregion Fields
 
@@ -14,20 +14,22 @@ namespace EchoNest.Artist
 
         public SuggestArtistResponse Execute(string artistName, int numberOfResults = 10)
         {
-            return Execute<SuggestArtistResponse>(
-                SuggestUrl,
-                ApiKey,
-                artistName,
-                numberOfResults);
+            string url = Build(Url)
+                .Add("api_key", ApiKey)
+                .Add("name", artistName)
+                .Add("results", numberOfResults).ToString();
+
+            return Execute<SuggestArtistResponse>(url);
         }
 
         public Task<SuggestArtistResponse> ExecuteAsync(string artistName, int numberOfResults = 10)
         {
-            return ExecuteAsync<SuggestArtistResponse>(
-                SuggestUrl,
-                ApiKey,
-                artistName,
-                numberOfResults);
+            string url = Build(Url)
+                .Add("api_key", ApiKey)
+                .Add("name", artistName)
+                .Add("results", numberOfResults).ToString();
+
+            return ExecuteAsync<SuggestArtistResponse>(url);
         }
 
         #endregion Methods
