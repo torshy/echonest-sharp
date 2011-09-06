@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Net.Http">
+      <HintPath>..\EchoNest-Sharp.Shell\bin\Debug\Microsoft.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Runtime.Serialization.Json">
+      <HintPath>..\EchoNest-Sharp.Shell\bin\Debug\Microsoft.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -41,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artist\SuggestArtist.cs" />
+    <Compile Include="Artist\SuggestResponse.cs" />
+    <Compile Include="EchoNestService.cs" />
+    <Compile Include="Artist\Suggest.cs" />
+    <Compile Include="EchoNestSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="ResponseCode.cs" />

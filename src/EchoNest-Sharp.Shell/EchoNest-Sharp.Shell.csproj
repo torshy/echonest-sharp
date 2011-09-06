@@ -58,7 +58,7 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\echonest-sharp\EchoNest-Sharp.csproj">
+    <ProjectReference Include="..\EchoNest-Sharp\EchoNest-Sharp.csproj">
       <Project>{22E05702-D30B-4A63-A304-DC0F06AFC4F0}</Project>
       <Name>EchoNest-Sharp</Name>
     </ProjectReference>
