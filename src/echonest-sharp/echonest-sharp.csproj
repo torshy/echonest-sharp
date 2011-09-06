@@ -56,6 +56,10 @@
     <Compile Include="Artist\Familiarity.cs" />
     <Compile Include="Artist\FamiliarityItem.cs" />
     <Compile Include="Artist\FamiliarityResponse.cs" />
+    <Compile Include="Artist\Hotttnesss.cs" />
+    <Compile Include="Artist\HotttnesssItem.cs" />
+    <Compile Include="Artist\HotttnesssResponse.cs" />
+    <Compile Include="Artist\HotttnesssType.cs" />
     <Compile Include="Artist\License.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
