@@ -11,5 +11,7 @@ namespace EchoNest.Artist
         public string Site { get; set; }
         [DataMember(Name = "url")]
         public string Url { get; set; }
+        [DataMember(Name = "license")]
+        public License License { get; set; }
     }
 }

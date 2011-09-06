@@ -53,6 +53,7 @@
     <Compile Include="Artist\Blog.cs" />
     <Compile Include="Artist\BlogItem.cs" />
     <Compile Include="Artist\BlogResponse.cs" />
+    <Compile Include="Artist\License.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
     <Compile Include="Artist\SuggestArtistResponse.cs" />
