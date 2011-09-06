@@ -50,7 +50,7 @@ namespace EchoNest.Artist
                 .Add("api_key", ApiKey)
                 .Add("results", numberOfResults)
                 .Add("start", start)
-                .Add("high_relevance", highRelevance);
+                .Add("high_relevance", highRelevance.ToString().ToLower());
 
             return query;
         }

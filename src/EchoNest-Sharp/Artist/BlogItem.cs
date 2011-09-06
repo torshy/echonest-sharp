@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace EchoNest.Artist
 {
@@ -12,11 +11,11 @@ namespace EchoNest.Artist
         public string Url { get; set; }
         [DataMember(Name = "summary")]
         public string Summary { get; set; }
-        [DataMember(Name = "datefound")]
-        public DateTime DateFound { get; set; }
+        [DataMember(Name = "date_found")]
+        public string DateFound { get; set; }
         [DataMember(Name = "id")]
         public string ID { get; set; }
-        [DataMember(Name = "dateposted")]
-        public DateTime DatePosted { get; set; }
+        [DataMember(Name = "date_posted")]
+        public string DatePosted { get; set; }
     }
 }
