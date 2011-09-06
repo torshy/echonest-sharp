@@ -60,6 +60,9 @@
     <Compile Include="Artist\HotttnesssItem.cs" />
     <Compile Include="Artist\HotttnesssResponse.cs" />
     <Compile Include="Artist\HotttnesssType.cs" />
+    <Compile Include="Artist\Image.cs" />
+    <Compile Include="Artist\ImageItem.cs" />
+    <Compile Include="Artist\ImageResponse.cs" />
     <Compile Include="Artist\License.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
