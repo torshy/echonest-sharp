@@ -68,6 +68,9 @@
     <Compile Include="Artist\ListTermsItem.cs" />
     <Compile Include="Artist\ListTermsResponse.cs" />
     <Compile Include="Artist\ListTermsType.cs" />
+    <Compile Include="Artist\News.cs" />
+    <Compile Include="Artist\NewsItem.cs" />
+    <Compile Include="Artist\NewsResponse.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
     <Compile Include="Artist\SuggestArtistResponse.cs" />
