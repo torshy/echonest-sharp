@@ -1,7 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoNest-Sharp", "src\echonest-sharp\EchoNest-Sharp.csproj", "{22E05702-D30B-4A63-A304-DC0F06AFC4F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6D2259B-7931-4EC5-9AD1-849E9D39A9EA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22E05702-D30B-4A63-A304-DC0F06AFC4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E05702-D30B-4A63-A304-DC0F06AFC4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E05702-D30B-4A63-A304-DC0F06AFC4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E05702-D30B-4A63-A304-DC0F06AFC4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
