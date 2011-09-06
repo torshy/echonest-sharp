@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 namespace EchoNest.Artist
 {
-    public class Suggest : EchoNestService
+    public class SuggestArtist : EchoNestService
     {
         #region Fields
 
@@ -12,18 +12,18 @@ namespace EchoNest.Artist
 
         #region Methods
 
-        public SuggestResponse Execute(string artistName, int numberOfResults = 10)
+        public SuggestArtistResponse Execute(string artistName, int numberOfResults = 10)
         {
-            return Execute<SuggestResponse>(
+            return Execute<SuggestArtistResponse>(
                 SuggestUrl,
                 ApiKey,
                 artistName,
                 numberOfResults);
         }
 
-        public Task<SuggestResponse> ExecuteAsync(string artistName, int numberOfResults = 10)
+        public Task<SuggestArtistResponse> ExecuteAsync(string artistName, int numberOfResults = 10)
         {
-            return ExecuteAsync<SuggestResponse>(
+            return ExecuteAsync<SuggestArtistResponse>(
                 SuggestUrl,
                 ApiKey,
                 artistName,

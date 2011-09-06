@@ -18,7 +18,7 @@ namespace EchoNest.Shell
             
             using(var session = new EchoNestSession(apiKey))
             {
-                var result = session.Query<Suggest>().Execute("no", 50);
+                var result = session.Query<SuggestArtist>().Execute("no", 50);
 
                 if (result.Status.Code == ResponseCode.Success)
                 {

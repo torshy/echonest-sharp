@@ -3,7 +3,7 @@
 namespace EchoNest.Artist
 {
     [DataContract]
-    public class SuggestArtist
+    public class SuggestArtistItem
     {
         [DataMember(Name = "id")]
         public string ID { get; set; }
