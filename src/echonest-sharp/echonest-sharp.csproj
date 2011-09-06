@@ -64,6 +64,10 @@
     <Compile Include="Artist\ImageItem.cs" />
     <Compile Include="Artist\ImageResponse.cs" />
     <Compile Include="Artist\License.cs" />
+    <Compile Include="Artist\ListTerms.cs" />
+    <Compile Include="Artist\ListTermsItem.cs" />
+    <Compile Include="Artist\ListTermsResponse.cs" />
+    <Compile Include="Artist\ListTermsType.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
     <Compile Include="Artist\SuggestArtistResponse.cs" />
