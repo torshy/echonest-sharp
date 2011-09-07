@@ -35,7 +35,7 @@ namespace EchoNest.Artist
         [DataMember(Name = "video")]
         public List<VideoItem> Videos { get; set; }
         [DataMember(Name = "years_active")]
-        public YearsActive YearsActive { get; set; }
+        public List<YearsActive> YearsActive { get; set; }
         [DataMember(Name = "foreign_ids")]
         public List<ForeignIdItem> ForeignIds { get; set; }
     }

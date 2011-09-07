@@ -14,7 +14,7 @@ namespace EchoNest.Artist
         [DataMember(Name = "amazon_url")]
         public string Amazon { get; set; }
         [DataMember(Name = "itunes_url")]
-        public string ITunes { get; set; }
+        public string Itunes { get; set; }
         [DataMember(Name = "mb_url")]
         public string MusicBrainz { get; set; }
     }

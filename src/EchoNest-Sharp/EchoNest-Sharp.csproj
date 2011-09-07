@@ -82,6 +82,9 @@
     <Compile Include="Artist\Reviews.cs" />
     <Compile Include="Artist\ReviewsItem.cs" />
     <Compile Include="Artist\ReviewsResponse.cs" />
+    <Compile Include="Artist\Search.cs" />
+    <Compile Include="Artist\SearchArgument.cs" />
+    <Compile Include="Artist\SearchResponse.cs" />
     <Compile Include="Artist\Terms.cs" />
     <Compile Include="Artist\TermsItem.cs" />
     <Compile Include="Artist\TermsResponse.cs" />
