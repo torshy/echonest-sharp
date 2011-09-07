@@ -83,6 +83,15 @@
     <Compile Include="Artist\TermsItem.cs" />
     <Compile Include="Artist\TermsResponse.cs" />
     <Compile Include="Artist\TermsSort.cs" />
+    <Compile Include="Artist\TopTerms.cs" />
+    <Compile Include="Artist\TopTermsItem.cs" />
+    <Compile Include="Artist\TopTermsResponse.cs" />
+    <Compile Include="Artist\Urls.cs" />
+    <Compile Include="Artist\UrlsItem.cs" />
+    <Compile Include="Artist\UrlsResponse.cs" />
+    <Compile Include="Artist\Video.cs" />
+    <Compile Include="Artist\VideoItem.cs" />
+    <Compile Include="Artist\VideoResponse.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
     <Compile Include="Artist\SuggestArtistResponse.cs" />
