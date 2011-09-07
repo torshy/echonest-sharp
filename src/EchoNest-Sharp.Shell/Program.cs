@@ -1,5 +1,4 @@
 ﻿using System;
-using EchoNest.Artist;
 
 namespace EchoNest.Shell
 {
@@ -15,22 +14,39 @@ namespace EchoNest.Shell
             }
 
             string apiKey = args[0];
-            
-            using(var session = new EchoNestSession(apiKey))
-            {
-                var result = session.Query<SuggestArtist>().Execute("no", 50);
 
-                if (result.Status.Code == ResponseCode.Success)
+            using (var session = new EchoNestSession(apiKey))
+            {
+                ConsoleKeyInfo keyInfo;
+
+                do
                 {
-                    foreach (var item in result.Artists)
+                    using (ConsoleEx.BeginColorBlock(ConsoleColor.Cyan))
                     {
-                        Console.WriteLine(item.Name + " [" + item.ID + "]");
+                        Console.WriteLine("=== Main menu ===");
+                        Console.WriteLine("1: Artist API");
+                        Console.WriteLine("=================");
                     }
-                }
-                else
-                {
-                    Console.WriteLine(result.Status.Message);
-                }
+
+                    ConsoleEx.Write("Enter menu >> ", ConsoleColor.Green);
+                    keyInfo = Console.ReadKey();
+                    Console.Write(Environment.NewLine);
+
+                    switch (keyInfo.Key)
+                    {
+                        case ConsoleKey.D1:
+                            ArtistShell.Display(session);
+                            break;
+                    }
+
+                    if (keyInfo.Key != ConsoleKey.Escape)
+                    {
+                        ConsoleEx.Write("Press any key to continue (except Esc which will exit)", ConsoleColor.Yellow);
+                        keyInfo = Console.ReadKey();
+                        Console.WriteLine();
+                    }
+
+                } while (keyInfo.Key != ConsoleKey.Escape);
             }
 
             Console.ReadLine();
