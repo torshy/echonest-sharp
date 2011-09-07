@@ -47,15 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Artist\ArtistBucket.cs" />
+    <Compile Include="Artist\ArtistBucketItem.cs" />
     <Compile Include="Artist\Biography.cs" />
     <Compile Include="Artist\BiographyItem.cs" />
     <Compile Include="Artist\BiographyResponse.cs" />
     <Compile Include="Artist\Blog.cs" />
     <Compile Include="Artist\BlogItem.cs" />
     <Compile Include="Artist\BlogResponse.cs" />
-    <Compile Include="Artist\Bucket.cs" />
-    <Compile Include="Artist\BucketExtensions.cs" />
+    <Compile Include="Artist\ArtistBucket.cs" />
+    <Compile Include="Artist\ArtistBucketExtensions.cs" />
     <Compile Include="Artist\DocCounts.cs" />
     <Compile Include="Artist\Extract.cs" />
     <Compile Include="Artist\ExtractArgument.cs" />
@@ -80,7 +80,6 @@
     <Compile Include="Artist\NewsItem.cs" />
     <Compile Include="Artist\NewsResponse.cs" />
     <Compile Include="Artist\Profile.cs" />
-    <Compile Include="Artist\ProfileItem.cs" />
     <Compile Include="Artist\ProfileResponse.cs" />
     <Compile Include="Artist\Reviews.cs" />
     <Compile Include="Artist\ReviewsItem.cs" />

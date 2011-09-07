@@ -12,21 +12,21 @@ namespace EchoNest.Artist
 
         #region Methods
 
-        public TopHotttResponse Execute(int numberOfResults = 15, int start = 0, Bucket? bucket = null)
+        public TopHotttResponse Execute(int numberOfResults = 15, int start = 0, ArtistBucket? bucket = null)
         {
             UriQuery query = GetQuery(numberOfResults, start, bucket);
 
             return Execute<TopHotttResponse>(query.ToString());
         }
 
-        public Task<TopHotttResponse> ExecuteAsync(int numberOfResults = 15, int start = 0, Bucket? bucket = null)
+        public Task<TopHotttResponse> ExecuteAsync(int numberOfResults = 15, int start = 0, ArtistBucket? bucket = null)
         {
             UriQuery query = GetQuery(numberOfResults, start, bucket);
 
             return ExecuteAsync<TopHotttResponse>(query.ToString());
         }
 
-        private UriQuery GetQuery(int numberOfResults, int start, Bucket? bucket)
+        private UriQuery GetQuery(int numberOfResults, int start, ArtistBucket? bucket)
         {
             UriQuery query = Build(Url)
                 .Add("api_key", ApiKey)

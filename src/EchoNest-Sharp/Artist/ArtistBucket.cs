@@ -1,44 +1,46 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.Serialization;
+﻿using System;
+using System.ComponentModel;
 
 namespace EchoNest.Artist
 {
-    [DataContract]
-    [DebuggerDisplay("Name={Name}, ID={ID}")]
-    public class ArtistBucket
+    [Flags]
+    public enum ArtistBucket
     {
-        [DataMember(Name = "id")]
-        public string ID { get; set; }
-        [DataMember(Name = "name")]
-        public string Name { get; set; }
-        [DataMember(Name = "hotttnesss")]
-        public double Hotttnesss { get; set; }
-        [DataMember(Name = "familiarity")]
-        public double Familiarity { get; set; }
-        [DataMember(Name = "biographies")]
-        public List<BiographyItem> Biographies { get; set; }
-        [DataMember(Name = "blogs")]
-        public List<BlogItem> Blogs { get; set; }
-        [DataMember(Name = "doc_counts")]
-        public int DocCounts { get; set; }
-        [DataMember(Name = "images")]
-        public List<ImageItem> Images { get; set; }
-        [DataMember(Name = "songs")]
-        public List<SongItem> Songs { get; set; }
-        [DataMember(Name = "news")]
-        public List<NewsItem> News { get; set; }
-        [DataMember(Name = "reviews")]
-        public List<ReviewsItem> Reviews { get; set; }
-        [DataMember(Name = "terms")]
-        public List<TermsItem> Terms { get; set; }
-        [DataMember(Name = "urls")]
-        public List<UrlsItem> Urls { get; set; }
-        [DataMember(Name = "video")]
-        public List<VideoItem> Videos { get; set; }
-        [DataMember(Name = "years_active")]
-        public List<YearsActive> YearsActive { get; set; }
-        [DataMember(Name = "foreign_ids")]
-        public List<ForeignIdItem> ForeignIds { get; set; }
+        [Description("biographies")]
+        Biographies = 1,
+        [Description("blogs")]
+        Blogs = 2,
+        [Description("doc_counts")]
+        DocCounts = 4,
+        [Description("familiarity")]
+        Familiarity = 8,
+        [Description("hotttnesss")]
+        Hotttnesss = 16,
+        [Description("images")]
+        Images = 32,
+        [Description("news")]
+        News = 64,
+        [Description("reviews")]
+        Reviews = 128,
+        [Description("songs")]
+        Songs = 256,
+        [Description("terms")]
+        Terms = 512,
+        [Description("urls")]
+        Urls = 1024,
+        [Description("video")]
+        Video = 2048,
+        [Description("audio")]
+        Audio = 4096,
+        [Description("years_active")]
+        YearsActive = 8192,
+        [Description("id:musicbrainz")]
+        IdMusicBrainz = 16384,
+        [Description("id:playme")]
+        IdPlayme = 32768,
+        [Description("id:7digital")]
+        Id7digital = 65536,
+        [Description("id:rdio-us-streaming")]
+        IdRdioUsStreaming = 131072
     }
 }

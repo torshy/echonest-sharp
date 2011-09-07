@@ -39,7 +39,7 @@ namespace EchoNest.Artist
             set;
         }
 
-        public Bucket? Bucket
+        public ArtistBucket? Bucket
         {
             get;
             set;

@@ -4,7 +4,7 @@
     {
         #region Properties
 
-        public Bucket? Bucket
+        public ArtistBucket? Bucket
         {
             get;
             set;

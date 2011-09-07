@@ -12,35 +12,35 @@ namespace EchoNest.Artist
 
         #region Methods
 
-        public ProfileResponse Execute(IdSpace id, Bucket? bucket = null)
+        public ProfileResponse Execute(IdSpace id, ArtistBucket? bucket = null)
         {
             UriQuery query = GetQuery(bucket).Add("id", id);
 
             return Execute<ProfileResponse>(query.ToString());
         }
 
-        public ProfileResponse Execute(string name, Bucket? bucket = null)
+        public ProfileResponse Execute(string name, ArtistBucket? bucket = null)
         {
             UriQuery query = GetQuery(bucket).Add("name", name);
 
             return Execute<ProfileResponse>(query.ToString());
         }
 
-        public Task<ProfileResponse> ExecuteAsync(IdSpace id, Bucket? bucket = null)
+        public Task<ProfileResponse> ExecuteAsync(IdSpace id, ArtistBucket? bucket = null)
         {
             UriQuery query = GetQuery(bucket).Add("id", id);
 
             return ExecuteAsync<ProfileResponse>(query.ToString());
         }
 
-        public Task<ProfileResponse> ExecuteAsync(string name, Bucket? bucket = null)
+        public Task<ProfileResponse> ExecuteAsync(string name, ArtistBucket? bucket = null)
         {
             UriQuery query = GetQuery(bucket).Add("name", name);
 
             return ExecuteAsync<ProfileResponse>(query.ToString());
         }
 
-        private UriQuery GetQuery(Bucket? bucket = null)
+        private UriQuery GetQuery(ArtistBucket? bucket = null)
         {
             UriQuery query = Build(Url)
                 .Add("api_key", ApiKey);

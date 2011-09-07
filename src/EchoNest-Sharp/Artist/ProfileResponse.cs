@@ -6,6 +6,6 @@ namespace EchoNest.Artist
     public class ProfileResponse : Response
     {
         [DataMember(Name = "artist")]
-        public ProfileItem Artist { get; set; }
+        public ArtistBucketItem Artist { get; set; }
     }
 }

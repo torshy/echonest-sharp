@@ -5,15 +5,15 @@ using System.Reflection;
 
 namespace EchoNest.Artist
 {
-    public static class BucketExtensions
+    public static class ArtistBucketExtensions
     {
-        public static IEnumerable<Bucket> GetBuckets(this Bucket bucket)
+        public static IEnumerable<ArtistBucket> GetBuckets(this ArtistBucket bucket)
         {
             var buckets = bucket.ToString().Split(',');
 
             foreach (var s in buckets)
             {
-                Bucket parsed;
+                ArtistBucket parsed;
                 if (Enum.TryParse(s.Trim(), out parsed))
                 {
                     yield return parsed;
@@ -21,7 +21,7 @@ namespace EchoNest.Artist
             }
         }
 
-        public static IEnumerable<string> GetBucketDescriptions(this Bucket bucket)
+        public static IEnumerable<string> GetBucketDescriptions(this ArtistBucket bucket)
         {
             var buckets = bucket.GetBuckets();
 
