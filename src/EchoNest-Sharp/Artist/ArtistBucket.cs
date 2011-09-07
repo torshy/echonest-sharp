@@ -24,6 +24,8 @@ namespace EchoNest.Artist
         public int DocCounts { get; set; }
         [DataMember(Name = "images")]
         public List<ImageItem> Images { get; set; }
+        [DataMember(Name = "songs")]
+        public List<SongItem> Songs { get; set; }
         [DataMember(Name = "news")]
         public List<NewsItem> News { get; set; }
         [DataMember(Name = "reviews")]

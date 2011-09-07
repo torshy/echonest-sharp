@@ -57,6 +57,9 @@
     <Compile Include="Artist\Bucket.cs" />
     <Compile Include="Artist\BucketExtensions.cs" />
     <Compile Include="Artist\DocCounts.cs" />
+    <Compile Include="Artist\Extract.cs" />
+    <Compile Include="Artist\ExtractArgument.cs" />
+    <Compile Include="Artist\ExtractResponse.cs" />
     <Compile Include="Artist\Familiarity.cs" />
     <Compile Include="Artist\FamiliarityItem.cs" />
     <Compile Include="Artist\FamiliarityResponse.cs" />
@@ -95,6 +98,8 @@
     <Compile Include="Artist\TermsItem.cs" />
     <Compile Include="Artist\TermsResponse.cs" />
     <Compile Include="Artist\TermsSort.cs" />
+    <Compile Include="Artist\TopHottt.cs" />
+    <Compile Include="Artist\TopHotttResponse.cs" />
     <Compile Include="Artist\TopTerms.cs" />
     <Compile Include="Artist\TopTermsItem.cs" />
     <Compile Include="Artist\TopTermsResponse.cs" />
