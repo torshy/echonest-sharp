@@ -26,5 +26,13 @@ namespace EchoNest.Artist
         public List<NewsItem> News { get; set; }
         [DataMember(Name = "reviews")]
         public List<ReviewsItem> Reviews { get; set; }
+        [DataMember(Name = "terms")]
+        public List<TermsItem> Terms { get; set; }
+        [DataMember(Name = "urls")]
+        public List<UrlsItem> Urls { get; set; }
+        [DataMember(Name = "video")]
+        public List<VideoItem> Videos { get; set; }
+        [DataMember(Name = "years_active")]
+        public YearsActive YearsActive { get; set; }
     }
 }

@@ -12,38 +12,46 @@ namespace EchoNest.Artist
 
         #region Methods
 
-        public ProfileResponse Execute(IdSpace id)
+        public ProfileResponse Execute(IdSpace id, Bucket? bucket = null)
         {
-            UriQuery query = GetQuery().Add("id", id);
+            UriQuery query = GetQuery(bucket).Add("id", id);
 
             return Execute<ProfileResponse>(query.ToString());
         }
 
-        public ProfileResponse Execute(string name)
+        public ProfileResponse Execute(string name, Bucket? bucket = null)
         {
-            UriQuery query = GetQuery().Add("name", name);
+            UriQuery query = GetQuery(bucket).Add("name", name);
 
             return Execute<ProfileResponse>(query.ToString());
         }
 
-        public Task<ProfileResponse> ExecuteAsync(IdSpace id)
+        public Task<ProfileResponse> ExecuteAsync(IdSpace id, Bucket? bucket = null)
         {
-            UriQuery query = GetQuery().Add("id", id);
+            UriQuery query = GetQuery(bucket).Add("id", id);
 
             return ExecuteAsync<ProfileResponse>(query.ToString());
         }
 
-        public Task<ProfileResponse> ExecuteAsync(string name)
+        public Task<ProfileResponse> ExecuteAsync(string name, Bucket? bucket = null)
         {
-            UriQuery query = GetQuery().Add("name", name);
+            UriQuery query = GetQuery(bucket).Add("name", name);
 
             return ExecuteAsync<ProfileResponse>(query.ToString());
         }
 
-        private UriQuery GetQuery()
+        private UriQuery GetQuery(Bucket? bucket = null)
         {
             UriQuery query = Build(Url)
                 .Add("api_key", ApiKey);
+
+            if (bucket.HasValue)
+            {
+                foreach (var bucketName in bucket.Value.GetBucketDescriptions())
+                {
+                    query.Add("bucket", bucketName);
+                }
+            }
 
             return query;
         }

@@ -92,6 +92,7 @@
     <Compile Include="Artist\Video.cs" />
     <Compile Include="Artist\VideoItem.cs" />
     <Compile Include="Artist\VideoResponse.cs" />
+    <Compile Include="Artist\YearsActive.cs" />
     <Compile Include="IdSpace.cs" />
     <Compile Include="Artist\SuggestArtistItem.cs" />
     <Compile Include="Artist\SuggestArtistResponse.cs" />
