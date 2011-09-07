@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22E05702-D30B-4A63-A304-DC0F06AFC4F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EchoNest</RootNamespace>
+    <AssemblyName>EchoNest-Sharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Net.Http">
+      <HintPath>..\EchoNest-Sharp.Shell\bin\Debug\Microsoft.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Runtime.Serialization.Json">
+      <HintPath>..\EchoNest-Sharp.Shell\bin\Debug\Microsoft.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Artist\Biography.cs" />
+    <Compile Include="Artist\BiographyItem.cs" />
+    <Compile Include="Artist\BiographyResponse.cs" />
+    <Compile Include="Artist\Blog.cs" />
+    <Compile Include="Artist\BlogItem.cs" />
+    <Compile Include="Artist\BlogResponse.cs" />
+    <Compile Include="Artist\Familiarity.cs" />
+    <Compile Include="Artist\FamiliarityItem.cs" />
+    <Compile Include="Artist\FamiliarityResponse.cs" />
+    <Compile Include="Artist\Hotttnesss.cs" />
+    <Compile Include="Artist\HotttnesssItem.cs" />
+    <Compile Include="Artist\HotttnesssResponse.cs" />
+    <Compile Include="Artist\HotttnesssType.cs" />
+    <Compile Include="Artist\Image.cs" />
+    <Compile Include="Artist\ImageItem.cs" />
+    <Compile Include="Artist\ImageResponse.cs" />
+    <Compile Include="Artist\License.cs" />
+    <Compile Include="Artist\ListTerms.cs" />
+    <Compile Include="Artist\ListTermsItem.cs" />
+    <Compile Include="Artist\ListTermsResponse.cs" />
+    <Compile Include="Artist\ListTermsType.cs" />
+    <Compile Include="Artist\News.cs" />
+    <Compile Include="Artist\NewsItem.cs" />
+    <Compile Include="Artist\NewsResponse.cs" />
+    <Compile Include="IdSpace.cs" />
+    <Compile Include="Artist\SuggestArtistItem.cs" />
+    <Compile Include="Artist\SuggestArtistResponse.cs" />
+    <Compile Include="EchoNestService.cs" />
+    <Compile Include="Artist\SuggestArtist.cs" />
+    <Compile Include="EchoNestSession.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="ResponseCode.cs" />
+    <Compile Include="ResponseContainer.cs" />
+    <Compile Include="ResponseStatus.cs" />
+    <Compile Include="UriQuery.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\tools\StyleCop\StyleCop.Targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
