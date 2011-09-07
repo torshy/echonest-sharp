@@ -13,5 +13,7 @@ namespace EchoNest.Artist
         public string Url { get; set; }
         [DataMember(Name = "license")]
         public License License { get; set; }
+        [DataMember(Name = "truncated")]
+        public bool Truncated { get; set; }
     }
 }
