@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.Serialization;
 
 namespace EchoNest.Artist
 {
     [DataContract]
+    [DebuggerDisplay("Name={Name}, ID={ID}")]
     public class ArtistBucket
     {
         [DataMember(Name = "id")]
@@ -34,5 +36,7 @@ namespace EchoNest.Artist
         public List<VideoItem> Videos { get; set; }
         [DataMember(Name = "years_active")]
         public YearsActive YearsActive { get; set; }
+        [DataMember(Name = "foreign_ids")]
+        public List<ForeignIdItem> ForeignIds { get; set; }
     }
 }

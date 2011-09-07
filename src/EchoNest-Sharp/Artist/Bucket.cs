@@ -31,6 +31,14 @@ namespace EchoNest.Artist
         [Description("video")]
         Video = 2048,
         [Description("audio")]
-        Audio = 4096
+        Audio = 4096,
+        [Description("id:musicbrainz")]
+        IdMusicBrainz = 8192,
+        [Description("id:playme")]
+        IdPlayme = 16384,
+        [Description("id:7digital")]
+        Id7digital = 32768,
+        [Description("id:rdio-us-streaming")]
+        IdRdioUsStreaming = 65536
     }
 }

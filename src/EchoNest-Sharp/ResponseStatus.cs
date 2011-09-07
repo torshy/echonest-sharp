@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using System.Runtime.Serialization;
 
 namespace EchoNest
 {
     [DataContract]
+    [DebuggerDisplay("Code={Code}, Message={Message}")]
     public class ResponseStatus
     {
         [DataMember(Name = "code")]

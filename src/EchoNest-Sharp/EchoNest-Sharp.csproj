@@ -54,10 +54,13 @@
     <Compile Include="Artist\Blog.cs" />
     <Compile Include="Artist\BlogItem.cs" />
     <Compile Include="Artist\BlogResponse.cs" />
+    <Compile Include="Artist\Bucket.cs" />
+    <Compile Include="Artist\BucketExtensions.cs" />
     <Compile Include="Artist\DocCounts.cs" />
     <Compile Include="Artist\Familiarity.cs" />
     <Compile Include="Artist\FamiliarityItem.cs" />
     <Compile Include="Artist\FamiliarityResponse.cs" />
+    <Compile Include="Artist\ForeignIdItem.cs" />
     <Compile Include="Artist\Hotttnesss.cs" />
     <Compile Include="Artist\HotttnesssItem.cs" />
     <Compile Include="Artist\HotttnesssResponse.cs" />
