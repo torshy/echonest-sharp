@@ -25,6 +25,7 @@ namespace EchoNest.Shell
                     {
                         Console.WriteLine("=== Main menu ===");
                         Console.WriteLine("1: Artist API");
+                        Console.WriteLine("2: Song API");
                         Console.WriteLine("=================");
                     }
 
@@ -36,6 +37,9 @@ namespace EchoNest.Shell
                     {
                         case ConsoleKey.D1:
                             ArtistShell.Display(session);
+                            break;
+                        case ConsoleKey.D2:
+                            SongShell.Display(session);
                             break;
                     }
 

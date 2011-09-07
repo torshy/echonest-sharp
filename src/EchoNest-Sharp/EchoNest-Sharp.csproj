@@ -120,6 +120,15 @@
     <Compile Include="ResponseCode.cs" />
     <Compile Include="ResponseContainer.cs" />
     <Compile Include="ResponseStatus.cs" />
+    <Compile Include="Song\ArtistLocation.cs" />
+    <Compile Include="Song\AudioSummary.cs" />
+    <Compile Include="Song\Search.cs" />
+    <Compile Include="Song\SearchArgument.cs" />
+    <Compile Include="Song\SearchResponse.cs" />
+    <Compile Include="Song\SongBucket.cs" />
+    <Compile Include="Song\SongBucketExtensions.cs" />
+    <Compile Include="Song\SongBucketItem.cs" />
+    <Compile Include="Song\TracksItem.cs" />
     <Compile Include="UriQuery.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
