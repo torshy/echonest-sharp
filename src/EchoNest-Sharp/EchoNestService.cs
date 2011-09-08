@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Json;
 using System.Net.Http;
-using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace EchoNest
 {
@@ -49,8 +48,8 @@ namespace EchoNest
         private T GetObject<T>(HttpResponseMessage resp)
             where T : class
         {
-            var jsonValue = JsonValue.Load(resp.Content.ContentReadStream);
-            var responseContainer = jsonValue.ReadAsType<ResponseContainer<T>>();
+            var jsonString = resp.Content.ReadAsString();
+            var responseContainer = JsonConvert.DeserializeObject<ResponseContainer<T>>(jsonString);
 
             if (responseContainer != null)
             {
