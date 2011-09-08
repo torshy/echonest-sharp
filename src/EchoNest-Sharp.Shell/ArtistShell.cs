@@ -75,12 +75,19 @@ namespace EchoNest.Shell
 
             var result = session.Query<Biography>().Execute(query, numberOfResults: 1);
 
-            foreach (var biography in result.Biographies)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine("Site:", ConsoleColor.White);
-                ConsoleEx.WriteLine(biography.Site, ConsoleColor.DarkYellow);
-                ConsoleEx.WriteLine("Biography text:", ConsoleColor.White);
-                ConsoleEx.WriteLine(biography.Text, ConsoleColor.DarkYellow);
+                foreach (var biography in result.Biographies)
+                {
+                    ConsoleEx.WriteLine("Site:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(biography.Site, ConsoleColor.DarkYellow);
+                    ConsoleEx.WriteLine("Biography text:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(biography.Text, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -94,14 +101,21 @@ namespace EchoNest.Shell
 
             var result = session.Query<Blog>().Execute(query, numberOfResults: 1);
 
-            foreach (var biography in result.Blogs)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine("Name:", ConsoleColor.White);
-                ConsoleEx.WriteLine(biography.Name, ConsoleColor.DarkYellow);
-                ConsoleEx.WriteLine("Summary:", ConsoleColor.White);
-                ConsoleEx.WriteLine(biography.Summary, ConsoleColor.DarkYellow);
-                ConsoleEx.WriteLine("Url:", ConsoleColor.White);
-                ConsoleEx.WriteLine(biography.Url, ConsoleColor.DarkYellow);
+                foreach (var biography in result.Blogs)
+                {
+                    ConsoleEx.WriteLine("Name:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(biography.Name, ConsoleColor.DarkYellow);
+                    ConsoleEx.WriteLine("Summary:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(biography.Summary, ConsoleColor.DarkYellow);
+                    ConsoleEx.WriteLine("Url:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(biography.Url, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -115,10 +129,17 @@ namespace EchoNest.Shell
 
             var result = session.Query<Familiarity>().Execute(query);
 
-            ConsoleEx.WriteLine("Name:", ConsoleColor.White);
-            ConsoleEx.WriteLine(result.Artist.Name, ConsoleColor.DarkYellow);
-            ConsoleEx.WriteLine("Familiarity:", ConsoleColor.White);
-            ConsoleEx.WriteLine(result.Artist.Familiarity.ToString(), ConsoleColor.DarkYellow);
+            if (result.Status.Code == ResponseCode.Success)
+            {
+                ConsoleEx.WriteLine("Name:", ConsoleColor.White);
+                ConsoleEx.WriteLine(result.Artist.Name, ConsoleColor.DarkYellow);
+                ConsoleEx.WriteLine("Familiarity:", ConsoleColor.White);
+                ConsoleEx.WriteLine(result.Artist.Familiarity.ToString(), ConsoleColor.DarkYellow);
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
+            }
         }
 
         private static void Hotttnesss(EchoNestSession session)
@@ -131,10 +152,17 @@ namespace EchoNest.Shell
 
             var result = session.Query<Hotttnesss>().Execute(query);
 
-            ConsoleEx.WriteLine("Name:", ConsoleColor.White);
-            ConsoleEx.WriteLine(result.Artist.Name, ConsoleColor.DarkYellow);
-            ConsoleEx.WriteLine("Familiarity:", ConsoleColor.White);
-            ConsoleEx.WriteLine(result.Artist.Hotttnesss.ToString(), ConsoleColor.DarkYellow);
+            if (result.Status.Code == ResponseCode.Success)
+            {
+                ConsoleEx.WriteLine("Name:", ConsoleColor.White);
+                ConsoleEx.WriteLine(result.Artist.Name, ConsoleColor.DarkYellow);
+                ConsoleEx.WriteLine("Familiarity:", ConsoleColor.White);
+                ConsoleEx.WriteLine(result.Artist.Hotttnesss.ToString(), ConsoleColor.DarkYellow);
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
+            }
         }
 
         private static void Images(EchoNestSession session)
@@ -147,10 +175,17 @@ namespace EchoNest.Shell
 
             var result = session.Query<Image>().Execute(query, numberOfResults: 5);
 
-            foreach (var item in result.Images)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine("Url:", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Url, ConsoleColor.DarkYellow);
+                foreach (var item in result.Images)
+                {
+                    ConsoleEx.WriteLine("Url:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Url, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -160,22 +195,36 @@ namespace EchoNest.Shell
 
             var result = session.Query<ListTerms>().Execute(ListTermsType.Style);
 
-            Console.WriteLine("Term type: " + result.TypeAsString);
-            foreach (var item in result.Terms)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.Write("Name: ", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                Console.WriteLine("Term type: " + result.TypeAsString);
+                foreach (var item in result.Terms)
+                {
+                    ConsoleEx.Write("Name: ", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
 
             ConsoleEx.WriteLine("-------------");
 
             result = session.Query<ListTerms>().Execute(ListTermsType.Mood);
 
-            Console.WriteLine("Term type: " + result.TypeAsString);
-            foreach (var item in result.Terms)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.Write("Name: ", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                Console.WriteLine("Term type: " + result.TypeAsString);
+                foreach (var item in result.Terms)
+                {
+                    ConsoleEx.Write("Name: ", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -189,12 +238,19 @@ namespace EchoNest.Shell
 
             var result = session.Query<News>().Execute(query, numberOfResults: 5);
 
-            foreach (var item in result.News)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine("Name:", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
-                ConsoleEx.WriteLine("Url:", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Url, ConsoleColor.DarkYellow);
+                foreach (var item in result.News)
+                {
+                    ConsoleEx.WriteLine("Name:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                    ConsoleEx.WriteLine("Url:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Url, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -208,12 +264,19 @@ namespace EchoNest.Shell
 
             var result = session.Query<Reviews>().Execute(query, numberOfResults: 5);
 
-            foreach (var item in result.Reviews)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine("Name:", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
-                ConsoleEx.WriteLine("Url:", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.Url, ConsoleColor.DarkYellow);
+                foreach (var item in result.Reviews)
+                {
+                    ConsoleEx.WriteLine("Name:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                    ConsoleEx.WriteLine("Url:", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Url, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -227,9 +290,16 @@ namespace EchoNest.Shell
 
             var result = session.Query<SimilarArtists>().Execute(new SimilarArtistsArgument { Name = query, Results = 5 });
 
-            foreach (var item in result.Artists)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                foreach (var item in result.Artists)
+                {
+                    ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
 
@@ -243,9 +313,16 @@ namespace EchoNest.Shell
 
             var result = session.Query<SuggestArtist>().Execute(query, 5);
 
-            foreach (var item in result.Artists)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                foreach (var item in result.Artists)
+                {
+                    ConsoleEx.WriteLine(item.Name, ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
     }

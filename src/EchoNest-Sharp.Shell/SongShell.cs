@@ -20,7 +20,6 @@ namespace EchoNest.Shell
             keyInfo = Console.ReadKey();
             Console.Write(Environment.NewLine);
 
-
             switch (keyInfo.Key)
             {
                 case ConsoleKey.D1:
@@ -39,17 +38,24 @@ namespace EchoNest.Shell
 
             var result = session.Query<Search>().Execute(new SearchArgument
                                                              {
-                                                                 Title = query, 
+                                                                 Title = query,
                                                                  Bucket = SongBucket.ArtistHotttness,
                                                                  Sort = "artist_hotttnesss-desc"
                                                              });
 
-            foreach (var item in result.Songs)
+            if (result.Status.Code == ResponseCode.Success)
             {
-                ConsoleEx.Write("Artist: ", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.ArtistName, ConsoleColor.DarkYellow);
-                ConsoleEx.Write("Hotttness: ", ConsoleColor.White);
-                ConsoleEx.WriteLine(item.ArtistHotttnesss.ToString(), ConsoleColor.DarkYellow);
+                foreach (var item in result.Songs)
+                {
+                    ConsoleEx.Write("Artist: ", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.ArtistName, ConsoleColor.DarkYellow);
+                    ConsoleEx.Write("Hotttness: ", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.ArtistHotttnesss.ToString(), ConsoleColor.DarkYellow);
+                }
+            }
+            else
+            {
+                ConsoleEx.WriteLine(result.Status.Message, ConsoleColor.Red);
             }
         }
     }
