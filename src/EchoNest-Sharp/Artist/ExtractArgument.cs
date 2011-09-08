@@ -52,7 +52,7 @@
             set;
         }
 
-        public string Sort
+        public Sorting? Sort
         {
             get;
             set;
@@ -123,9 +123,9 @@
                 query.Add("results", Results.Value);
             }
 
-            if (!string.IsNullOrEmpty(Sort))
+            if (Sort.HasValue)
             {
-                query.Add("sort", Sort);
+                query.Add("sort", EnumHelpers.GetDescription(Sort.Value));
             }
 
             return query.ToString();

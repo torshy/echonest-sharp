@@ -74,7 +74,7 @@
             get; set;
         }
 
-        public string RankType
+        public RankType? RankType
         {
             get; set;
         }
@@ -84,7 +84,7 @@
             get; set;
         }
 
-        public string Sort
+        public Sorting? Sort
         {
             get; set;
         }
@@ -197,9 +197,9 @@
                 query.Add("min_hotttnesss", MinHotttnesss.Value);
             }
 
-            if (!string.IsNullOrEmpty(RankType))
+            if (RankType.HasValue)
             {
-                query.Add("rank_type", RankType);
+                query.Add("rank_type", RankType.Value.ToString().ToLower());
             }
 
             if (Results.HasValue)
@@ -212,9 +212,9 @@
                 query.Add("start", Start.Value);
             }
 
-            if (!string.IsNullOrEmpty(Sort))
+            if (Sort.HasValue)
             {
-                query.Add("sort", Sort);
+                query.Add("sort", EnumHelpers.GetDescription(Sort.Value));
             }
 
             return query.ToString();

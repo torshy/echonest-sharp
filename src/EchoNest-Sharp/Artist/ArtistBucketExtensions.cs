@@ -27,11 +27,14 @@ namespace EchoNest.Artist
 
             foreach (var b in buckets)
             {
-                yield return GetDescription(b);
+                yield return EnumHelpers.GetDescription(b);
             }
         }
+    }
 
-        private static string GetDescription(Enum value)
+    internal class EnumHelpers
+    {
+        internal static string GetDescription(Enum value)
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
             DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
