@@ -41,6 +41,8 @@ namespace EchoNest.Artist
         [Description("id:7digital")]
         Id7digital = 65536,
         [Description("id:rdio-us-streaming")]
-        IdRdioUsStreaming = 131072
+        IdRdioUsStreaming = 131072,
+        [Description("id:facebook")]
+        IdFacebook = 262144
     }
 }
