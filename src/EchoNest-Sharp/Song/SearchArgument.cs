@@ -1,7 +1,20 @@
-﻿namespace EchoNest.Song
+﻿using System.Linq;
+
+namespace EchoNest.Song
 {
     public class SearchArgument
     {
+        #region Constructors
+
+        public SearchArgument()
+        {
+            Styles = new TermList();
+            Moods = new TermList();
+            Description = new TermList();
+        }
+
+        #endregion Constructors
+
         #region Properties
 
         public string Artist
@@ -76,10 +89,10 @@
             set;
         }
 
-        public string Description
+        public TermList Description
         {
             get;
-            set;
+            private set;
         }
 
         public string Key
@@ -172,10 +185,10 @@
             set;
         }
 
-        public string Mood
+        public TermList Moods
         {
             get;
-            set;
+            private set;
         }
 
         public string RankType
@@ -214,10 +227,10 @@
             set;
         }
 
-        public string Style
+        public TermList Styles
         {
             get;
-            set;
+            private set;
         }
 
         public string Title
@@ -263,19 +276,28 @@
                 query.Add("combined", Combined);
             }
 
-            if (!string.IsNullOrEmpty(Description))
+            if (Description.Count() > 0)
             {
-                query.Add("description", Description);
+                foreach (var description in Description)
+                {
+                    query.Add("description", description);
+                }
             }
 
-            if (!string.IsNullOrEmpty(Style))
+            if (Styles.Count() > 0)
             {
-                query.Add("style", Style);
+                foreach (var style in Styles)
+                {
+                    query.Add("style", style);
+                }
             }
 
-            if (!string.IsNullOrEmpty(Mood))
+            if (Moods.Count() > 0)
             {
-                query.Add("mood", Mood);
+                foreach (var mood in Moods)
+                {
+                    query.Add("mood", mood);
+                }
             }
 
             if (!string.IsNullOrEmpty(RankType))
