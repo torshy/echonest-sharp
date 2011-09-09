@@ -1,112 +1,146 @@
-﻿namespace EchoNest.Artist
+﻿using System.Linq;
+
+namespace EchoNest.Artist
 {
     public class SearchArgument
     {
+        #region Constructors
+
+        public SearchArgument()
+        {
+            Styles = new TermList();
+            Moods = new TermList();
+            Description = new TermList();
+        }
+
+        #endregion Constructors
+
         #region Properties
 
         public string ArtistEndYearAfter
         {
-            get; set;
+            get;
+            set;
         }
 
         public string ArtistEndYearBefore
         {
-            get; set;
+            get;
+            set;
         }
 
         public string ArtistStartYearAfter
         {
-            get; set;
+            get;
+            set;
         }
 
         public string ArtistStartYearBefore
         {
-            get; set;
+            get;
+            set;
         }
 
         public ArtistBucket? Bucket
         {
-            get; set;
+            get;
+            set;
         }
 
-        public string Description
+        public TermList Description
         {
-            get; set;
+            get;
+            private set;
         }
 
         public bool? FuzzyMatch
         {
-            get; set;
+            get;
+            set;
         }
 
         public bool? Limit
         {
-            get; set;
+            get;
+            set;
         }
 
         public double? MaxFamiliarity
         {
-            get; set;
+            get;
+            set;
         }
 
         public double? MaxHotttnesss
         {
-            get; set;
+            get;
+            set;
         }
 
         public double? MinFamiliarity
         {
-            get; set;
+            get;
+            set;
         }
 
         public double? MinHotttnesss
         {
-            get; set;
+            get;
+            set;
         }
 
-        public string Mood
+        public TermList Moods
         {
-            get; set;
+            get;
+            private set;
         }
 
         public string Name
         {
-            get; set;
+            get;
+            set;
         }
 
         public RankType? RankType
         {
-            get; set;
+            get;
+            set;
         }
 
         public int? Results
         {
-            get; set;
+            get;
+            set;
         }
 
         public Sorting? Sort
         {
-            get; set;
+            get;
+            set;
         }
 
         public int? Start
         {
-            get; set;
+            get;
+            set;
         }
 
-        public string Style
+        public TermList Styles
         {
-            get; set;
+            get;
+            private set;
         }
 
         internal string ApiKey
         {
-            get; set;
+            get;
+            set;
         }
 
         internal string BaseUrl
         {
-            get; set;
+            get;
+            set;
         }
 
         #endregion Properties
@@ -124,14 +158,20 @@
                 query.Add("name", Name);
             }
 
-            if (!string.IsNullOrEmpty(Style))
+            if (Styles.Count() > 0)
             {
-                query.Add("style", Style);
+                foreach (var style in Styles)
+                {
+                    query.Add("style", style);
+                }
             }
 
-            if (!string.IsNullOrEmpty(Mood))
+            if (Moods.Count() > 0)
             {
-                query.Add("mood", Mood);
+                foreach (var mood in Moods)
+                {
+                    query.Add("mood", mood);
+                }
             }
 
             if (!string.IsNullOrEmpty(ArtistEndYearAfter))
@@ -162,9 +202,12 @@
                 }
             }
 
-            if (!string.IsNullOrEmpty(Description))
+            if (Description.Count() > 0)
             {
-                query.Add("description", Description);
+                foreach (var description in Description)
+                {
+                    query.Add("description", description);
+                }
             }
 
             if (FuzzyMatch.HasValue)

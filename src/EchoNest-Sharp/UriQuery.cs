@@ -23,6 +23,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Text;
 
 namespace EchoNest
@@ -101,6 +102,28 @@ namespace EchoNest
         }
 
         /// <summary>
+        /// Adds the specified key and value.
+        /// </summary>
+        /// <param name="key">The name.</param>
+        /// <param name="value">The value.</param>
+        public UriQuery Add(string key, double value)
+        {
+            _entries.Add(new KeyValuePair<string, string>(key, value.ToString(CultureInfo.InvariantCulture)));
+            return this;
+        }
+
+        /// <summary>
+        /// Adds the specified key and value.
+        /// </summary>
+        /// <param name="key">The name.</param>
+        /// <param name="value">The value.</param>
+        public UriQuery Add(string key, bool value)
+        {
+            _entries.Add(new KeyValuePair<string, string>(key, value.ToString().ToLower()));
+            return this;
+        }
+
+        /// <summary>
         /// Gets the enumerator.
         /// </summary>
         /// <returns></returns>
@@ -123,11 +146,19 @@ namespace EchoNest
         public override string ToString()
         {
             var queryBuilder = new StringBuilder();
-            queryBuilder.Append(_baseUrl);
+
+            if (!string.IsNullOrEmpty(_baseUrl))
+            {
+                queryBuilder.Append(_baseUrl);
+            }
 
             if (_entries.Count > 0)
             {
-                queryBuilder.Append('?');
+                if (!string.IsNullOrEmpty(_baseUrl))
+                {
+                    queryBuilder.Append('?');
+                }
+
                 var first = true;
 
                 foreach (var kvp in _entries)
