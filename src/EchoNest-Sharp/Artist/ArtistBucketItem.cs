@@ -13,9 +13,9 @@ namespace EchoNest.Artist
         [DataMember(Name = "name")]
         public string Name { get; set; }
         [DataMember(Name = "hotttnesss")]
-        public double Hotttnesss { get; set; }
+        public double? Hotttnesss { get; set; }
         [DataMember(Name = "familiarity")]
-        public double Familiarity { get; set; }
+        public double? Familiarity { get; set; }
         [DataMember(Name = "biographies")]
         public List<BiographyItem> Biographies { get; set; }
         [DataMember(Name = "blogs")]

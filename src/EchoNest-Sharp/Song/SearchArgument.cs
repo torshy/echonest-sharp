@@ -41,25 +41,25 @@ namespace EchoNest.Song
             set;
         }
 
-        public int? ArtistMaxFamiliarity
+        public double? ArtistMaxFamiliarity
         {
             get;
             set;
         }
 
-        public int? ArtistMaxHotttnesss
+        public double? ArtistMaxHotttnesss
         {
             get;
             set;
         }
 
-        public int? ArtistMinFamiliarity
+        public double? ArtistMinFamiliarity
         {
             get;
             set;
         }
 
-        public int? ArtistMinHotttnesss
+        public double? ArtistMinHotttnesss
         {
             get;
             set;
@@ -107,73 +107,73 @@ namespace EchoNest.Song
             set;
         }
 
-        public int? MaxDanceability
+        public double? MaxDanceability
         {
             get;
             set;
         }
 
-        public int? MaxEnergy
+        public double? MaxEnergy
         {
             get;
             set;
         }
 
-        public int? MaxLatitude
+        public double? MaxLatitude
         {
             get;
             set;
         }
 
-        public int? MaxLongitude
+        public double? MaxLongitude
         {
             get;
             set;
         }
 
-        public int? MaxLoudness
+        public double? MaxLoudness
         {
             get;
             set;
         }
 
-        public int? MaxTempo
+        public double? MaxTempo
         {
             get;
             set;
         }
 
-        public int? MinDanceability
+        public double? MinDanceability
         {
             get;
             set;
         }
 
-        public int? MinEnergy
+        public double? MinEnergy
         {
             get;
             set;
         }
 
-        public int? MinLatitude
+        public double? MinLatitude
         {
             get;
             set;
         }
 
-        public int? MinLongitude
+        public double? MinLongitude
         {
             get;
             set;
         }
 
-        public int? MinLoudness
+        public double? MinLoudness
         {
             get;
             set;
         }
 
-        public int? MinTempo
+        public double? MinTempo
         {
             get;
             set;
@@ -203,13 +203,13 @@ namespace EchoNest.Song
             set;
         }
 
-        public int? SongMaxHotttnesss
+        public double? SongMaxHotttnesss
         {
             get;
             set;
         }
 
-        public int? SongMinHotttnesss
+        public double? SongMinHotttnesss
         {
             get;
             set;

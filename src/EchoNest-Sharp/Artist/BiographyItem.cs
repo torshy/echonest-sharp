@@ -14,6 +14,6 @@ namespace EchoNest.Artist
         [DataMember(Name = "license")]
         public License License { get; set; }
         [DataMember(Name = "truncated")]
-        public bool Truncated { get; set; }
+        public bool? Truncated { get; set; }
     }
 }

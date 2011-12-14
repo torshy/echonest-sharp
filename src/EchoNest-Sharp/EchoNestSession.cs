@@ -20,6 +20,7 @@ namespace EchoNest
         {
             _apiKey = apiKey;
             _httpClient = new HttpClient(_baseUrl);
+            _httpClient.MaxResponseContentBufferSize = int.MaxValue;
         }
 
         #endregion Constructors
