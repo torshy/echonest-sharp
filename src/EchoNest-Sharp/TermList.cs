@@ -29,6 +29,15 @@ namespace EchoNest
             return newTerm;
         }
 
+        public IList<Term> AddRange(TermList terms)
+        {
+            foreach (var term in terms)
+            {
+                _terms.Add(term);
+            }
+            return _terms;
+        }
+
         public IEnumerator<Term> GetEnumerator()
         {
             return _terms.GetEnumerator();

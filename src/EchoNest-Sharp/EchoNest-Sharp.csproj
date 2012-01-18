@@ -90,6 +90,13 @@
     <Compile Include="Artist\SongItem.cs" />
     <Compile Include="Artist\SongResponse.cs" />
     <Compile Include="Artist\Sorting.cs" />
+    <Compile Include="Playlist\Basic.cs" />
+    <Compile Include="Playlist\BasicArgument.cs" />
+    <Compile Include="Playlist\PlaylistBucket.cs" />
+    <Compile Include="Playlist\PlaylistBucketExtensions.cs" />
+    <Compile Include="Playlist\PlaylistResponse.cs" />
+    <Compile Include="Playlist\Static.cs" />
+    <Compile Include="Playlist\StaticArgument.cs" />
     <Compile Include="Term.cs" />
     <Compile Include="TermList.cs" />
     <Compile Include="Artist\Terms.cs" />
