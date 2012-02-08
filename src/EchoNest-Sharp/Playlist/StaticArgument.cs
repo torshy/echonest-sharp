@@ -351,9 +351,9 @@ namespace EchoNest.Playlist
 
         #region Methods
 
-        public new string ToString()
+        protected override UriQuery GetUriQuery()
         {
-            UriQuery query = GetUriQuery();
+            UriQuery query = base.GetUriQuery();
 
             if (!string.IsNullOrEmpty(ArtistPick))
             {
@@ -529,6 +529,12 @@ namespace EchoNest.Playlist
                 query.Add("sort", Sort);
             }
 
+            return query;
+        }
+
+        public new string ToString()
+        {
+            UriQuery query = GetUriQuery();
             return query.ToString();
         }
 

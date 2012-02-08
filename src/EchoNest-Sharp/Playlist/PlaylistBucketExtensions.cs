@@ -9,9 +9,9 @@ namespace EchoNest.Playlist
     {
         public static IEnumerable<PlaylistBucket> GetBuckets(this PlaylistBucket bucket)
         {
-            var buckets = bucket.ToString().Split(',');
+            string[] buckets = bucket.ToString().Split(',');
 
-            foreach (var s in buckets)
+            foreach (string s in buckets)
             {
                 PlaylistBucket parsed;
                 if (Enum.TryParse(s.Trim(), out parsed))
@@ -23,9 +23,9 @@ namespace EchoNest.Playlist
 
         public static IEnumerable<string> GetBucketDescriptions(this PlaylistBucket bucket)
         {
-            var buckets = bucket.GetBuckets();
+            IEnumerable<PlaylistBucket> buckets = bucket.GetBuckets();
 
-            foreach (var b in buckets)
+            foreach (PlaylistBucket b in buckets)
             {
                 yield return GetDescription(b);
             }
@@ -34,7 +34,7 @@ namespace EchoNest.Playlist
         private static string GetDescription(Enum value)
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
-            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            DescriptionAttribute[] attributes = (DescriptionAttribute[]) fi.GetCustomAttributes(typeof (DescriptionAttribute), false);
             if (attributes.Length > 0)
             {
                 return attributes[0].Description;

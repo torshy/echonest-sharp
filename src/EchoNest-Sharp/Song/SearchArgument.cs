@@ -215,6 +215,12 @@ namespace EchoNest.Song
             set;
         }
 
+        /// <summary>
+        ///     indicates how the songs results should be ordered
+        /// </summary>
+        /// <example>
+        ///     tempo-asc, duration-asc, loudness-asc, artist_familiarity-asc, artist_hotttnesss-asc, artist_start_year-asc, artist_start_year-desc, artist_end_year-asc, artist_end_year-desc, song_hotttness-asc, latitude-asc, longitude-asc, mode-asc, key-asc, tempo-desc, duration-desc, loudness-desc, artist_familiarity-desc, artist_hotttnesss-desc, song_hotttnesss-desc, latitude-desc, longitude-desc, mode-desc, key-desc, energy-asc, energy-desc, danceability-asc, danceability-desc
+        /// </example>
         public string Sort
         {
             get;

@@ -32,14 +32,14 @@ namespace EchoNest.Playlist
         ///     the type of the playlist to be generated.
         /// </summary>
         /// <example>
-        /// <list>
-        /// <item>artist - plays songs for the given artists</item>
-        /// <item>artist-radio - plays songs for the given artists and similar artists</item>
-        /// <item>artist-description - plays songs from artists matching the given description</item>
-        /// <item>song-radio - plays songs similar to the song specified.</item>
-        /// <item>catalog - the playlist is personalized based upon the given seed catalog. Results are limited to items listed in the given catalog.</item>
-        /// <item>catalog-radio - the playlist is personalized based upon the given seed catalog. Results are limited to items listed in the given catalog and items that are similar to items in the given catalog.</item>
-        /// </list>
+        ///     <list type = "bullet">
+        ///         <item>artist - plays songs for the given artists</item>
+        ///         <item>artist-radio - plays songs for the given artists and similar artists</item>
+        ///         <item>artist-description - plays songs from artists matching the given description</item>
+        ///         <item>song-radio - plays songs similar to the song specified.</item>
+        ///         <item>catalog - the playlist is personalized based upon the given seed catalog. Results are limited to items listed in the given catalog.</item>
+        ///         <item>catalog-radio - the playlist is personalized based upon the given seed catalog. Results are limited to items listed in the given catalog and items that are similar to items in the given catalog.</item>
+        ///     </list>
         /// </example>
         public string Type { get; set; }
 
@@ -88,7 +88,7 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = 15)
         /// </remarks>
-        public int? Results { get; set; }
+        public virtual int? Results { get; set; }
 
         /// <summary>
         ///     Specifies which rosetta id space info should be returned
@@ -118,7 +118,7 @@ namespace EchoNest.Playlist
 
         #region Methods
 
-        protected UriQuery GetUriQuery()
+        protected virtual UriQuery GetUriQuery()
         {
             UriQuery query = new UriQuery(BaseUrl);
             query.Add("api_key", ApiKey);
