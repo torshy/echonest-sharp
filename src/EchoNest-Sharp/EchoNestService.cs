@@ -34,7 +34,7 @@ namespace EchoNest
             where T : class
         {
             url = string.Format(url, arguments);
-            HttpResponseMessage response = HttpClient.Get(url);
+            HttpResponseMessage response = HttpClient.GetAsync(url).Result;
             return GetObject<T>(response);
         }
 
@@ -48,7 +48,7 @@ namespace EchoNest
         private T GetObject<T>(HttpResponseMessage resp)
             where T : class
         {
-            var jsonString = resp.Content.ReadAsString();
+            var jsonString = resp.Content.ReadAsStringAsync().Result;
             var responseContainer = JsonConvert.DeserializeObject<ResponseContainer<T>>(jsonString);
 
             if (responseContainer != null)

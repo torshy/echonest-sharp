@@ -7,8 +7,8 @@ namespace EchoNest
     {
         #region Fields
 
+        private const string BaseUrl = "http://developer.echonest.com/api/v4/";
         private readonly string _apiKey;
-        private readonly string _baseUrl = "http://developer.echonest.com/api/v4/";
 
         private HttpClient _httpClient;
 
@@ -19,7 +19,7 @@ namespace EchoNest
         public EchoNestSession(string apiKey)
         {
             _apiKey = apiKey;
-            _httpClient = new HttpClient(_baseUrl);
+            _httpClient = new HttpClient {BaseAddress = new Uri(BaseUrl)};
             _httpClient.MaxResponseContentBufferSize = int.MaxValue;
         }
 
@@ -29,21 +29,18 @@ namespace EchoNest
 
         void IDisposable.Dispose()
         {
-            if (_httpClient != null)
+            if (_httpClient == null)
             {
-                _httpClient.Dispose();
-                _httpClient = null;
+                return;
             }
+
+            _httpClient.Dispose();
+            _httpClient = null;
         }
 
-        public T Query<T>()
-            where T : EchoNestService, new()
+        public T Query<T>() where T : EchoNestService, new()
         {
-            return new T
-                       {
-                           ApiKey = _apiKey,
-                           HttpClient = _httpClient
-                       };
+            return new T {ApiKey = _apiKey, HttpClient = _httpClient};
         }
 
         #endregion Methods
