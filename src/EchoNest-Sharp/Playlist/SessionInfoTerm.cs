@@ -9,6 +9,6 @@ namespace EchoNest.Playlist
         public double Frequency { get; set; }
 
         [DataMember(Name = "name")]
-        public double Name { get; set; }
+        public string Name { get; set; }
     }
 }
