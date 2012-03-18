@@ -29,6 +29,13 @@ namespace EchoNest
             return newTerm;
         }
 
+        public Term Add(Term term)
+        {
+            term.Parent = this;
+            _terms.Add(term);
+            return term;
+        }
+
         public IEnumerator<Term> GetEnumerator()
         {
             return _terms.GetEnumerator();
