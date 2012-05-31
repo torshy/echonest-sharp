@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoNest-Sharp.Shell", "src\EchoNest-Sharp.Shell\EchoNest-Sharp.Shell.csproj", "{B2CCB273-7A1E-4C4E-82B6-AEAA6B592DA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoNest-Sharp.Tests", "src\EchoNest-Sharp.Tests\EchoNest-Sharp.Tests.csproj", "{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,16 @@ Global
 		{B2CCB273-7A1E-4C4E-82B6-AEAA6B592DA3}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B2CCB273-7A1E-4C4E-82B6-AEAA6B592DA3}.Release|x86.ActiveCfg = Release|x86
 		{B2CCB273-7A1E-4C4E-82B6-AEAA6B592DA3}.Release|x86.Build.0 = Release|x86
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A04F8EE6-593F-4A93-BFCE-64BE8EDD6923}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
