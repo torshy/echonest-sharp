@@ -40,7 +40,6 @@ namespace EchoNest
         
         public Term Add(Term term)
         {
-            term.Parent = this;
             _terms.Add(term);
             return term;
         }

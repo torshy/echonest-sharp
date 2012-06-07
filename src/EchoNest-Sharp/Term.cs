@@ -80,12 +80,6 @@ namespace EchoNest
             }
         }
 
-        public TermList Parent
-        {
-            get { return _parent; }
-            internal set { _parent = value; }
-        }
-
         #endregion Properties
 
         #region Methods
