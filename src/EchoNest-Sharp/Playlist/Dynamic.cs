@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
+using System;
 
 namespace EchoNest.Playlist
 {
+    [Obsolete("Deprecated by Echonest, will be disabled on December 21, 2012", true)]
     public class Dynamic : EchoNestService
     {
         #region Fields
