@@ -93,6 +93,7 @@ namespace EchoNest.Tests
             }
         }
 
+#if false
         [TestCase("Apocalypse Now Phyc Rock", "60s,guitar,psychadelic,rock,sountrack^0.5", "eeirie^0.5,dark^0.5,disturbing^0.5,groovy^0.5,melancholia^0.5,ominous^0.5")]
         [TestCase("Apocalypse Now", "60s,psychadelic,rock^0.5,sountrack^0.5", "eeirie,dark,disturbing,groovy,melancholia,ominous^0.5")]
         [Test]
@@ -165,5 +166,6 @@ namespace EchoNest.Tests
                 Console.WriteLine();
             }
         }
+#endif
     }
 }
