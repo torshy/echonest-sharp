@@ -12,7 +12,7 @@ namespace EchoNest.Song
         ArtistFamiliarity = 2,
         [Description("artist_hotttnesss")]
         ArtistHotttness = 4,
-        [Description ("artist_location")]
+        [Description("artist_location")]
         ArtistLocation = 8,
         [Description("song_hotttnesss")]
         SongHotttness = 16,

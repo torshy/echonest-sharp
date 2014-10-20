@@ -17,19 +17,15 @@ namespace EchoNest.Playlist
     /// </summary>
     public class DynamicArgument : StaticArgument
     {
-        #region Constructors
-
-        #endregion Constructors
-
         #region Properties
-        
+
         /// <summary>
         /// Number of results to return is not applicable to dynamic playlist because dynamic playlist returns only 1 result by design
         /// </summary>
         public override int? Results
         {
             get { return null; }
-            set { throw new ArgumentException("Results. Number of results to return is not applicable to dynamic playlist because dynamic playlist returns only 1 result by design"); } 
+            set { throw new ArgumentException("Results. Number of results to return is not applicable to dynamic playlist because dynamic playlist returns only 1 result by design"); }
         }
 
         /// <summary>
@@ -41,7 +37,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     c1fdacd5a1164449b49584398ca807f3
         /// </example>
-        public string SessionId { get; set; }
+        public string SessionId
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     The user rating for the previous track. 5 is the highest rating, 1 is the lowest rating. Some playlist algorithms will adapt playlists based upon these ratings.
@@ -52,7 +51,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     required = no
         /// </remarks>
-        public int? Rating { get; set; }
+        public int? Rating
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     If true, an additional 'track' is added to the end XSPF playlist that is a URL to the next XSPF in the chain.
@@ -64,7 +66,10 @@ namespace EchoNest.Playlist
         ///     required = no
         ///     default = false
         /// </remarks>
-        public bool? ChainXspf { get; set; }
+        public bool? ChainXspf
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Using the previously played track as the basis, make all future tracks some multiplier of the selected attribute(s). required terms use a multiplier in a boost-like format - e.g. energy^.5 to make all future songs have half the energy of the previously played song, or loudness^1.3 to add 30%.
@@ -75,7 +80,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     required = no, multiple = yes
         /// </remarks>
-        public string Steer { get; set; }
+        public string Steer
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Using the current playlist as a basis, add or remove terms relating to the artists and songs to be played. Applying a term again will overwrite the previous term, including boost. Boosting with a "0" will remove a term from the list of qualifiers. Using 'description' rather than 'steer_description' will clear the description list and restart the playlist session with the new term.
@@ -86,7 +94,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     required = no, multiple = yes
         /// </remarks>
-        public string SteerDescription { get; set; }
+        public string SteerDescription
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Using the current playlist as a basis, add or remove terms relating to the style of artists and songs to be played. Applying a style again will overwrite the previous style, including boost. Boosting with a "0" will remove a term from the list of qualifiers. Using 'style' rather than 'steer_style' will clear the style list and restart the playlist session with the new style.
@@ -97,7 +108,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     required = no, multiple = yes
         /// </remarks>
-        public string SteerStyle { get; set; }
+        public string SteerStyle
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Using the current playlist as a basis, add or remove terms relating to the mood of artists and songs to be played. Applying a mood again will overwrite the previous mood, including boost. Boosting with a "0" will remove a mood from the list of moods. Using 'mood' rather than 'steer_mood' will clear the mood list and restart the playlist session with the new mood.
@@ -108,7 +122,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     required = no, multiple = yes
         /// </remarks>
-        public string SteerMood { get; set; }
+        public string SteerMood
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Banning will prevent the song/all songs by that artist from appearing again in the current playlist session.
@@ -119,11 +136,20 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     required = no, multiple = yes
         /// </remarks>
-        public string Ban { get; set; }
+        public string Ban
+        {
+            get; set;
+        }
 
         #endregion Properties
 
         #region Methods
+
+        public new string ToString()
+        {
+            UriQuery query = GetUriQuery();
+            return query.ToString();
+        }
 
         protected override UriQuery GetUriQuery()
         {
@@ -170,12 +196,6 @@ namespace EchoNest.Playlist
             }
 
             return query;
-        }
-
-        public new string ToString()
-        {
-            UriQuery query = GetUriQuery();
-            return query.ToString();
         }
 
         #endregion Methods

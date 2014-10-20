@@ -21,12 +21,18 @@ namespace EchoNest.Playlist
         /// <summary>
         ///     The API url
         /// </summary>
-        public string BaseUrl { get; set; }
+        public string BaseUrl
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     your API key
         /// </summary>
-        public string ApiKey { get; set; }
+        public string ApiKey
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the type of the playlist to be generated.
@@ -41,7 +47,10 @@ namespace EchoNest.Playlist
         ///         <item>catalog-radio - the playlist is personalized based upon the given seed catalog. Results are limited to items listed in the given catalog and items that are similar to items in the given catalog.</item>
         ///     </list>
         /// </example>
-        public string Type { get; set; }
+        public string Type
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Multiples allowed (no more than 5 total total artist_id, artist, track_id, and song_id parameters)
@@ -50,7 +59,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     ARH6W4X1187B99274F, 7digital-US:artist:304
         /// </example>
-        public TermList ArtistID { get; set; }
+        public TermList ArtistID
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Name(s) of seed artist(s) for the playlist
@@ -59,7 +71,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     Weezer, the+beatles
         /// </example>
-        public TermList Artist { get; set; }
+        public TermList Artist
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     ID(s) of seed song(s) for the playlist (used by some types). Echo Nest or Rosetta IDs (See Project Rosetta Stone)
@@ -68,7 +83,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     SOCZMFK12AC468668F
         /// </example>
-        public TermList SongID { get; set; }
+        public TermList SongID
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     ID(s) of seed tracks(s) for the playlist (used by playlist types that accept songs as seeds) Echo Nest or Rosetta IDs (See Project Rosetta Stone)
@@ -77,7 +95,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     TRTLKZV12E5AC92E11
         /// </example>
-        public TermList TrackID { get; set; }
+        public TermList TrackID
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     The desired number of songs in the playlist
@@ -88,7 +109,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = 15)
         /// </remarks>
-        public virtual int? Results { get; set; }
+        public virtual int? Results
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Specifies which rosetta id space info should be returned
@@ -96,7 +120,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     id:catalog-name, tracks
         /// </example>
-        public PlaylistBucket? Bucket { get; set; }
+        public PlaylistBucket? Bucket
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     If 'true', limit the results to any of the given rosetta id space
@@ -104,7 +131,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = false)
         /// </remarks>
-        public bool? Limit { get; set; }
+        public bool? Limit
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     If true the playlist delivered will meet the DMCA rules (see below).
@@ -112,11 +142,20 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = false)
         /// </remarks>
-        public bool? Dmca { get; set; }
+        public bool? Dmca
+        {
+            get; set;
+        }
 
         #endregion Properties
 
         #region Methods
+
+        public override string ToString()
+        {
+            UriQuery query = GetUriQuery();
+            return query.ToString();
+        }
 
         protected virtual UriQuery GetUriQuery()
         {
@@ -185,12 +224,6 @@ namespace EchoNest.Playlist
             }
 
             return query;
-        }
-
-        public override string ToString()
-        {
-            UriQuery query = GetUriQuery();
-            return query.ToString();
         }
 
         #endregion Methods

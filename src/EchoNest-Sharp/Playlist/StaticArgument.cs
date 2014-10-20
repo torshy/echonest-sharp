@@ -26,7 +26,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = song_hotttness-desc)
         /// </remarks>
-        public string ArtistPick { get; set; }
+        public string ArtistPick
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum variety of artists to be represented in the playlist. A higher number will allow for more variety in the artists.
@@ -37,7 +40,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = 0.3)
         /// </remarks>
-        public double? Variety { get; set; }
+        public double? Variety
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Controls the distribution of artists in the playlist. A focused distribution yields a playlist of songs that are tightly clustered around the seeds, whereas a wandering distribution yields a playlist from a broader range of artists.
@@ -48,7 +54,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = focused)
         /// </remarks>
-        public string Distribution { get; set; }
+        public string Distribution
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Controls the trade between known music and unknown music. A value of 0 means no adventurousness, only known and preferred music will be played. A value of 1 means high adventurousness, mostly unknown music will be played. A value of auto indicates that the adventurousness should be automatically determined based upon the taste profile of the user. This parameter only applies to catalog and catalog-radio type playlists.
@@ -59,7 +68,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default = 0.2)
         /// </remarks>
-        public double? Adventurousness { get; set; }
+        public double? Adventurousness
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     ID of seed artist catalog for the playlist
@@ -67,7 +79,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     CAKSMUX1321A708AA4
         /// </example>
-        public string SeedCatalog { get; set; }
+        public string SeedCatalog
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     description of the type of songs that can be included in the playlist
@@ -75,7 +90,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     alt-rock,-emo,harp^2
         /// </example>
-        public TermList Description { get; private set; }
+        public TermList Description
+        {
+            get; private set;
+        }
 
         /// <summary>
         ///     a musical style or genre like rock, jazz, or funky. See the method list_terms for details on what styles are currently available
@@ -83,7 +101,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     jazz, metal^2
         /// </example>
-        public TermList Styles { get; private set; }
+        public TermList Styles
+        {
+            get; private set;
+        }
 
         /// <summary>
         ///     a mood like happy or sad. See the method list_terms for details on what moods are currently available
@@ -91,7 +112,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     happy, sad^.5
         /// </example>
-        public TermList Moods { get; private set; }
+        public TermList Moods
+        {
+            get; private set;
+        }
 
         /// <summary>
         ///     the minimum artist hotttnesss for songs in the playlist
@@ -102,7 +126,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=0.0)
         /// </remarks>
-        public double? ArtistMinHotttnesss { get; set; }
+        public double? ArtistMinHotttnesss
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum artist hotttness for songs in the playlist
@@ -113,7 +140,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=1.0)
         /// </remarks>
-        public double? ArtistMaxHotttnesss { get; set; }
+        public double? ArtistMaxHotttnesss
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum artist familiarity for songs in the playlist
@@ -124,7 +154,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=0.0)
         /// </remarks>
-        public double? ArtistMinFamiliarity { get; set; }
+        public double? ArtistMinFamiliarity
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum artist familiarity for songs in the playlist
@@ -135,7 +168,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=1.0)
         /// </remarks>
-        public double? ArtistMaxFamiliarity { get; set; }
+        public double? ArtistMaxFamiliarity
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Matches artists that have an earliest start year after the given value
@@ -143,7 +179,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     1970, 2011, present
         /// </example>
-        public string ArtistStartYearAfter { get; set; }
+        public string ArtistStartYearAfter
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Matches artists that have an earliest start year before the given value
@@ -151,7 +190,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     1970, 2011, present
         /// </example>
-        public string ArtistStartYearBefore { get; set; }
+        public string ArtistStartYearBefore
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Matches artists that have a latest end year after the given value
@@ -159,7 +201,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     1970, 2011, present
         /// </example>
-        public string ArtistEndYearAfter { get; set; }
+        public string ArtistEndYearAfter
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     Matches artists that have a latest end year before the given value
@@ -167,7 +212,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     1970, 2011, present
         /// </example>
-        public string ArtistEndYearBefore { get; set; }
+        public string ArtistEndYearBefore
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the key of songs in the playlist
@@ -175,7 +223,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     (c, c-sharp, d, e-flat, e, f, f-sharp, g, a-flat, a, b-flat, b) 0 - 11
         /// </example>
-        public string Key { get; set; }
+        public string Key
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum danceability of any song
@@ -186,7 +237,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=0.0)
         /// </remarks>
-        public double? MinDanceability { get; set; }
+        public double? MinDanceability
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum danceability of any song
@@ -197,7 +251,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=1.0)
         /// </remarks>
-        public double? MaxDanceability { get; set; }
+        public double? MaxDanceability
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum energy of any song
@@ -208,7 +265,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=0.0)
         /// </remarks>
-        public double? MinEnergy { get; set; }
+        public double? MinEnergy
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum energy of any song
@@ -219,7 +279,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=1.0)
         /// </remarks>
-        public double? MaxEnergy { get; set; }
+        public double? MaxEnergy
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum latitude for the location of artists in the playlist
@@ -230,7 +293,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=-90.0)
         /// </remarks>
-        public double? MinLatitude { get; set; }
+        public double? MinLatitude
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum latitude for the location of artists in the playlist
@@ -241,7 +307,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=90.0)
         /// </remarks>
-        public double? MaxLatitude { get; set; }
+        public double? MaxLatitude
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum longitude for the location of artists in the playlist
@@ -252,7 +321,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=-180.0)
         /// </remarks>
-        public double? MinLongitude { get; set; }
+        public double? MinLongitude
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum longitude for the location of artists in the playlist
@@ -263,7 +335,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=180.0)
         /// </remarks>
-        public double? MaxLongitude { get; set; }
+        public double? MaxLongitude
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum loudness of any song on the playlist
@@ -274,7 +349,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=-100.0)
         /// </remarks>
-        public double? MinLoudness { get; set; }
+        public double? MinLoudness
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum loudness of any song on the playlist
@@ -285,7 +363,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=100.0)
         /// </remarks>
-        public double? MaxLoudness { get; set; }
+        public double? MaxLoudness
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum tempo for any included songs
@@ -296,7 +377,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=0.0)
         /// </remarks>
-        public double? MinTempo { get; set; }
+        public double? MinTempo
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum tempo for any included songs
@@ -307,7 +391,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=500.0)
         /// </remarks>
-        public double? MaxTempo { get; set; }
+        public double? MaxTempo
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the mode of songs in the playlist
@@ -315,7 +402,10 @@ namespace EchoNest.Playlist
         /// <example>
         ///     (minor, major) 0, 1
         /// </example>
-        public string Mode { get; set; }
+        public string Mode
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the minimum hotttnesss for songs in the playlist
@@ -326,7 +416,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=0.0)
         /// </remarks>
-        public double? SongMinHotttnesss { get; set; }
+        public double? SongMinHotttnesss
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     the maximum hotttnesss for songs in the playlist
@@ -337,7 +430,10 @@ namespace EchoNest.Playlist
         /// <remarks>
         ///     (default=1.0)
         /// </remarks>
-        public double? SongMaxHotttnesss { get; set; }
+        public double? SongMaxHotttnesss
+        {
+            get; set;
+        }
 
         /// <summary>
         ///     indicates how the songs should be ordered in the playlist
@@ -345,11 +441,20 @@ namespace EchoNest.Playlist
         /// <example>
         ///     tempo-asc, duration-asc, loudness-asc, artist_familiarity-asc, artist_hotttnesss-asc, artist_start_year-asc, artist_start_year-desc, artist_end_year-asc, artist_end_year-desc, song_hotttness-asc, latitude-asc, longitude-asc, mode-asc, key-asc, tempo-desc, duration-desc, loudness-desc, artist_familiarity-desc, artist_hotttnesss-desc, song_hotttnesss-desc, latitude-desc, longitude-desc, mode-desc, key-desc, energy-asc, energy-desc, danceability-asc, danceability-desc
         /// </example>
-        public string Sort { get; set; }
+        public string Sort
+        {
+            get; set;
+        }
 
         #endregion Properties
 
         #region Methods
+
+        public new string ToString()
+        {
+            UriQuery query = GetUriQuery();
+            return query.ToString();
+        }
 
         protected override UriQuery GetUriQuery()
         {
@@ -380,7 +485,7 @@ namespace EchoNest.Playlist
                 query.Add("seed_catalog", SeedCatalog);
             }
 
-            if (Description.Count() > 0)
+            if (Description.Any())
             {
                 foreach (Term description in Description)
                 {
@@ -388,7 +493,7 @@ namespace EchoNest.Playlist
                 }
             }
 
-            if (Styles.Count() > 0)
+            if (Styles.Any())
             {
                 foreach (Term style in Styles)
                 {
@@ -396,7 +501,7 @@ namespace EchoNest.Playlist
                 }
             }
 
-            if (Moods.Count() > 0)
+            if (Moods.Any())
             {
                 foreach (Term mood in Moods)
                 {
@@ -530,12 +635,6 @@ namespace EchoNest.Playlist
             }
 
             return query;
-        }
-
-        public new string ToString()
-        {
-            UriQuery query = GetUriQuery();
-            return query.ToString();
         }
 
         #endregion Methods

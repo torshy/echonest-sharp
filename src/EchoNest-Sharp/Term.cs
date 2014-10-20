@@ -40,7 +40,10 @@ namespace EchoNest
 
         public bool? IsBanned
         {
-            get { return _ban; }
+            get
+            {
+                return _ban;
+            }
             set
             {
                 if (_require.HasValue || _boost.HasValue)
@@ -54,7 +57,10 @@ namespace EchoNest
 
         public double? IsBoosted
         {
-            get { return _boost; }
+            get
+            {
+                return _boost;
+            }
             set
             {
                 if (_ban.HasValue || _require.HasValue)
@@ -68,7 +74,10 @@ namespace EchoNest
 
         public bool? IsRequired
         {
-            get { return _require; }
+            get
+            {
+                return _require;
+            }
             set
             {
                 if (_ban.HasValue || _boost.HasValue)

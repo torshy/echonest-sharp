@@ -19,7 +19,7 @@ namespace EchoNest
         public EchoNestSession(string apiKey)
         {
             _apiKey = apiKey;
-            _httpClient = new HttpClient {BaseAddress = new Uri(BaseUrl)};
+            _httpClient = new HttpClient { BaseAddress = new Uri(BaseUrl) };
             _httpClient.MaxResponseContentBufferSize = int.MaxValue;
         }
 
@@ -40,7 +40,7 @@ namespace EchoNest
 
         public T Query<T>() where T : EchoNestService, new()
         {
-            return new T {ApiKey = _apiKey, HttpClient = _httpClient};
+            return new T { ApiKey = _apiKey, HttpClient = _httpClient };
         }
 
         #endregion Methods

@@ -7,6 +7,6 @@ namespace EchoNest.Artist
     public class SimilarArtistsResponse : Response
     {
         [DataMember(Name = "artists")]
-        public List<ArtistBucketItem> Artists{ get; set; }
+        public List<ArtistBucketItem> Artists { get; set; }
     }
 }

@@ -1,10 +1,16 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoNest-Sharp", "src\EchoNest-Sharp\EchoNest-Sharp.csproj", "{22E05702-D30B-4A63-A304-DC0F06AFC4F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6D2259B-7931-4EC5-9AD1-849E9D39A9EA}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		build.cake = build.cake
+		build.cmd = build.cmd
+		nuspecs\EchoNest-Sharp.nuspec = nuspecs\EchoNest-Sharp.nuspec
 		README.md = README.md
 	EndProjectSection
 EndProject

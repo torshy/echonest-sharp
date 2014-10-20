@@ -27,3 +27,4 @@ _ReSharper*/
 *.sln.docstates
 *StyleCop.Cache
 *.vsp
+Packages/

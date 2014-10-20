@@ -282,7 +282,7 @@ namespace EchoNest.Song
                 query.Add("combined", Combined);
             }
 
-            if (Description.Count() > 0)
+            if (Description.Any())
             {
                 foreach (var description in Description)
                 {
@@ -290,7 +290,7 @@ namespace EchoNest.Song
                 }
             }
 
-            if (Styles.Count() > 0)
+            if (Styles.Any())
             {
                 foreach (var style in Styles)
                 {
@@ -298,7 +298,7 @@ namespace EchoNest.Song
                 }
             }
 
-            if (Moods.Count() > 0)
+            if (Moods.Any())
             {
                 foreach (var mood in Moods)
                 {

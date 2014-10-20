@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>EchoNestSharp</id>
+    <version>__VERSION__</version>
+    <title>EchoNest-Sharp</title>
+    <authors>Torstein Auensen</authors>
+    <owners>Torstein Auensen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Managed API for EchoNest</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>EchoNest</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="6.0.5" />
+      <dependency id="System.Net.Http" version="2.0.20126.16343" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\EchoNest-Sharp\bin\Release\EchoNest-Sharp.*" target="lib\net40" />
+  </files>
+</package>
