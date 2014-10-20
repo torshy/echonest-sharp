@@ -38,7 +38,7 @@ Task("Patch-Assembly-Info")
 		Version = assemblyVersion,
 		FileVersion = assemblyFileVersion,
 		InformationalVersion = version,
-		Copyright = "Copyright (c) Patrik Svensson 2014"
+		Copyright = "Copyright (c) Torstein Auensen 2014"
 	});
 });
 
