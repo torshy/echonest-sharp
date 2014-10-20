@@ -2,9 +2,9 @@
 
 namespace EchoNest.Shell
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             if (args.Length == 0)
             {
@@ -53,8 +53,8 @@ namespace EchoNest.Shell
                         keyInfo = Console.ReadKey();
                         Console.WriteLine();
                     }
-
-                } while (keyInfo.Key != ConsoleKey.Escape);
+                }
+                while (keyInfo.Key != ConsoleKey.Escape);
             }
 
             Console.ReadLine();

@@ -29,7 +29,6 @@ namespace EchoNest.Shell
             keyInfo = Console.ReadKey();
             Console.Write(Environment.NewLine);
 
-
             switch (keyInfo.Key)
             {
                 case ConsoleKey.D1:

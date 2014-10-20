@@ -2,22 +2,19 @@
 
 namespace EchoNest.Shell
 {
-    public class ConsoleExtensions
-    {
-        
-    }
-
     public static class ConsoleEx
     {
         public static string Indent(int count)
         {
-            return "".PadLeft(count);
+            return string.Empty.PadLeft(count);
         }
 
         public static string Truncate(string source, int length)
         {
             if (string.IsNullOrEmpty(source))
+            {
                 return "Unknown playlist";
+            }
 
             if (source.Length > length)
             {
@@ -28,7 +25,7 @@ namespace EchoNest.Shell
 
         public static ConsoleExtensions WriteLine(string text, ConsoleColor color = ConsoleColor.Gray)
         {
-            using(BeginColorBlock(color))
+            using (BeginColorBlock(color))
             {
                 Console.WriteLine(text);
             }
@@ -48,7 +45,7 @@ namespace EchoNest.Shell
 
         public static ConsoleExtensions Write(string text, ConsoleColor color = ConsoleColor.Gray)
         {
-            using(BeginColorBlock(color))
+            using (BeginColorBlock(color))
             {
                 Console.Write(text);
             }
@@ -80,9 +77,9 @@ namespace EchoNest.Shell
                 {
                     if (!string.IsNullOrEmpty(password))
                     {
-                        password = password.Substring
-                            (0, password.Length - 1);
+                        password = password.Substring(0, password.Length - 1);
                     }
+
                     info = Console.ReadKey(true);
                 }
             }

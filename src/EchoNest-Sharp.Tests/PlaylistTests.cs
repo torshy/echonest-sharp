@@ -18,7 +18,6 @@ namespace EchoNest.Tests
         [Test]
         public void GetBasicPlaylist_WhereArtistName_HasSongsByArtist(string artistName)
         {
-            //arrange
             BasicArgument basicArgument = new BasicArgument
             {
                 Results = 10,
@@ -27,18 +26,13 @@ namespace EchoNest.Tests
 
             TermList artistTerms = new TermList { artistName };
             basicArgument.Artist.AddRange(artistTerms);
-               
 
-            //act
             using (EchoNestSession session = new EchoNestSession(ConfigurationManager.AppSettings.Get("echoNestApiKey")))
             {
-               //act
                 PlaylistResponse searchResponse = session.Query<Basic>().Execute(basicArgument);
 
-                //assert
                 Assert.IsNotNull(searchResponse);
 
-                // output
                 Console.WriteLine("Songs for : {0}", artistName);
                 foreach (SongBucketItem song in searchResponse.Songs)
                 {
@@ -53,7 +47,6 @@ namespace EchoNest.Tests
         [Test]
         public void GetStaticPlaylist_WhereMoodAndStyle_HasVarietyOfArtists(string title, string styles, string moods)
         {
-            //arrange
             TermList styleTerms = new TermList();
             foreach (string s in styles.Split(','))
             {
@@ -65,7 +58,7 @@ namespace EchoNest.Tests
             {
                 moodTerms.Add(s);
             }
-            
+
             StaticArgument staticArgument = new StaticArgument
             {
                 Results = 25,
@@ -77,19 +70,15 @@ namespace EchoNest.Tests
             staticArgument.Styles.AddRange(styleTerms);
 
             staticArgument.Moods.AddRange(moodTerms);
-            
-            //act
+
             using (EchoNestSession session = new EchoNestSession(ConfigurationManager.AppSettings.Get("echoNestApiKey")))
             {
-                //act
                 PlaylistResponse searchResponse = session.Query<Static>().Execute(staticArgument);
 
-                //assert
                 Assert.IsNotNull(searchResponse);
                 Assert.IsNotNull(searchResponse.Songs);
                 Assert.IsTrue(searchResponse.Songs.Any());
 
-                // output
                 Console.WriteLine("Songs for : {0}", title);
                 foreach (SongBucketItem song in searchResponse.Songs)
                 {
@@ -104,7 +93,6 @@ namespace EchoNest.Tests
         [Test]
         public void GetDynamicPlaylist_WhereMoodAndStyle_CanSteerDynamicPlaylistByMood(string title, string styles, string moods)
         {
-            //arrange
             TermList styleTerms = new TermList();
             foreach (string s in styles.Split(','))
             {
@@ -128,21 +116,16 @@ namespace EchoNest.Tests
 
             dynamicArgument.Moods.AddRange(moodTerms);
 
-            //act
             using (EchoNestSession session = new EchoNestSession(ConfigurationManager.AppSettings.Get("echoNestApiKey")))
             {
-                //act
                 DynamicPlaylistResponse searchResponse = session.Query<Dynamic>().Execute(dynamicArgument);
 
-                //assert
                 Assert.IsNotNull(searchResponse);
                 Assert.IsNotNull(searchResponse.Songs);
                 Assert.IsTrue(searchResponse.Songs.Any());
 
-                // arrange next part of test
                 string sessionId = searchResponse.SessionId;
 
-                // output
                 Console.WriteLine("Dynamic Playlist Session Id: {0}", sessionId);
                 Console.WriteLine();
                 Console.WriteLine("Songs for : {0}", title);

@@ -25,28 +25,28 @@ namespace EchoNest.Shell
             switch (keyInfo.Key)
             {
                 case ConsoleKey.D1:
-                    Basic(session);
-                    break;
+                Basic(session);
+                break;
                 case ConsoleKey.D2:
-                    Basic(session);
-                    break;
+                Basic(session);
+                break;
                 case ConsoleKey.D3:
-                    Basic(session);
-                    break;
+                Basic(session);
+                break;
             }
         }
 
         private static void Basic(EchoNestSession session)
         {
-            String query = String.Empty;
+            string query = string.Empty;
 
             ConsoleEx.WriteLine("=== Basic Playlist Generation ===", ConsoleColor.Cyan);
             ConsoleEx.WriteLine("(Enter a comma separated list of artist names for generating a baisc 'artist-radio' type playlist)", ConsoleColor.Cyan);
-            
+
             ConsoleEx.Write("Query >> ", ConsoleColor.Green);
             query = Console.ReadLine();
 
-            if (String.IsNullOrEmpty(query))
+            if (string.IsNullOrEmpty(query))
             {
                 ConsoleEx.WriteLine("Query was empty. Press any key to start over.", ConsoleColor.Cyan);
                 Console.ReadLine();
@@ -64,11 +64,11 @@ namespace EchoNest.Shell
             {
                 artistTerms.Add(term.Trim());
             }
-            
+
             basicArgument.Artist.AddRange(artistTerms);
-            
+
             var result = session.Query<Basic>().Execute(basicArgument);
-            
+
             if (result.Status.Code == ResponseCode.Success)
             {
                 foreach (var item in result.Songs)
