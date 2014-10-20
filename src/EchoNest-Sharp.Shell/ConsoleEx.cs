@@ -20,6 +20,7 @@ namespace EchoNest.Shell
             {
                 source = source.Substring(0, length - 2).Trim() + "..";
             }
+
             return source;
         }
 
@@ -52,6 +53,7 @@ namespace EchoNest.Shell
 
             return new ConsoleExtensions();
         }
+
         public static ConsoleExtensions Write(string format, ConsoleColor color = ConsoleColor.Gray, params object[] args)
         {
             using (BeginColorBlock(color))

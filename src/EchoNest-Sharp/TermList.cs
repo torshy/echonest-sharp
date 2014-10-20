@@ -35,6 +35,7 @@ namespace EchoNest
             {
                 _terms.Add(term);
             }
+
             return _terms;
         }
         

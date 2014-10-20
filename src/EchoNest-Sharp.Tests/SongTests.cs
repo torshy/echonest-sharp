@@ -10,7 +10,10 @@ using SearchResponse = EchoNest.Song.SearchResponse;
 
 namespace EchoNest.Tests
 {
+    using System.Diagnostics.CodeAnalysis;
+
     [TestFixture]
+    [SuppressMessage("StyleCopPlus.StyleCopPlusRules", "SP0100:AdvancedNamingRules", Justification = "OK.")]
     public class SongTests
     {
         [Test]

@@ -7,7 +7,10 @@ using NUnit.Framework;
 
 namespace EchoNest.Tests
 {
+    using System.Diagnostics.CodeAnalysis;
+
     [TestFixture]
+    [SuppressMessage("StyleCopPlus.StyleCopPlusRules", "SP0100:AdvancedNamingRules", Justification = "OK.")]
     public class PlaylistTests
     {
         [TestCase("Jimi Hendrix")]
@@ -38,6 +41,7 @@ namespace EchoNest.Tests
                 {
                     Console.WriteLine("\t{0} ({1})", song.Title, song.ArtistName);
                 }
+
                 Console.WriteLine();
             }
         }
@@ -84,6 +88,7 @@ namespace EchoNest.Tests
                 {
                     Console.WriteLine("\t{0} ({1})", song.Title, song.ArtistName);
                 }
+
                 Console.WriteLine();
             }
         }
@@ -133,6 +138,7 @@ namespace EchoNest.Tests
                 {
                     Console.WriteLine("\t{0} ({1})", song.Title, song.ArtistName);
                 }
+
                 Console.WriteLine();
                 Console.WriteLine("Steering Playlist by mood = -happy");
                 Console.WriteLine();
@@ -155,6 +161,7 @@ namespace EchoNest.Tests
                 {
                     Console.WriteLine("\t{0} ({1})", song.Title, song.ArtistName);
                 }
+
                 Console.WriteLine();
             }
         }
