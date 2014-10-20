@@ -5,7 +5,7 @@ var assemblyFileVersion = Argument("FileVersion", "0.0.0.0");			// Sets the asse
 var prereleaseVersion = Argument("PrereleaseVersion", string.Empty);	// Sets the assembly informational version postfix
 var nugetApiKey = Argument("NuGetKey", string.Empty);					// NuGet API Key
 
-var buildDir = "./src/bin/" + configuration;
+var buildDir = "./src/EchoNest-Sharp/bin/" + configuration;
 var nugetPath = "./.nuget/NuGet.exe";
 var nuspecsDir = @"./nuspecs";
 var version =  assemblyVersion + prereleaseVersion;
