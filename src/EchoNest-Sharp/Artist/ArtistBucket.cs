@@ -38,7 +38,7 @@ namespace EchoNest.Artist
         IdMusicBrainz = 16384,
         [Description("id:playme")]
         IdPlayme = 32768,
-        [Description("id:7digital")]
+        [Description("id:7digital-US")]
         Id7digital = 65536,
         [Description("id:rdio-us-streaming")]
         IdRdioUsStreaming = 131072,
