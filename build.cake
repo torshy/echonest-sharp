@@ -59,7 +59,11 @@ Task("Unit-Tests")
 	.Description("Runs all unit tests")
 	.Does(() =>
 {
-	MSTest("./src/**/bin/" + configuration + "/*.Tests.dll");
+	var toolPath = GetFiles("./packages/nunit.runners*/tools/**/nunit-console.exe").FirstOrDefault<FilePath>();
+	NUnit("./src/**/bin/" + configuration + "/*.Tests.dll", new NUnitSettings
+	{
+		ToolPath = toolPath
+	});
 });
 
 Task("Create-NuGet-Package")
