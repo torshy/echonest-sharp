@@ -19,8 +19,6 @@ namespace EchoNest.Song
         public double? Energy { get; set; }
         [DataMember(Name = "tempo")]
         public double Tempo { get; set; }
-        [DataMember(Name = "audio_md5")]
-        public string AudioMd5 { get; set; }
         [DataMember(Name = "analysis_url")]
         public string AnalysisUrl { get; set; }
         [DataMember(Name = "danceability")]
