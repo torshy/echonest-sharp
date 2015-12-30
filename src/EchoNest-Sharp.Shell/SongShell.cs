@@ -85,6 +85,8 @@ namespace EchoNest.Shell
                 | SongBucket.ArtistDiscoveryRank
                 | SongBucket.SongCurrency
                 | SongBucket.SongCurrencyRank
+                | SongBucket.SongDiscovery
+                | SongBucket.SongDiscoveryRank
                 | SongBucket.SongType
                 | SongBucket.ArtistFamiliarity
                 | SongBucket.ArtistFamiliarityRank
