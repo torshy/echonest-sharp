@@ -49,6 +49,8 @@ namespace EchoNest.Shell
                 {
                     ConsoleEx.Write("Artist: ", ConsoleColor.White);
                     ConsoleEx.WriteLine(item.ArtistName, ConsoleColor.DarkYellow);
+                    ConsoleEx.Write("Title: ", ConsoleColor.White);
+                    ConsoleEx.WriteLine(item.Title, ConsoleColor.DarkYellow);
                     ConsoleEx.Write("Hotttness: ", ConsoleColor.White);
                     ConsoleEx.WriteLine(item.ArtistHotttnesss.ToString(), ConsoleColor.DarkYellow);
                 }
