@@ -17,20 +17,20 @@ namespace EchoNest.Song
 
         #region Methods
 
-        public SearchResponse Execute(ProfileArgument argument)
+        public ProfileResponse Execute(ProfileArgument argument)
         {
             argument.ApiKey = ApiKey;
             argument.BaseUrl = Url;
 
-            return Execute<SearchResponse>(argument.ToString());
+            return Execute<ProfileResponse>(argument.ToString());
         }
 
-        public Task<SearchResponse> ExecuteAsync(ProfileArgument argument)
+        public Task<ProfileResponse> ExecuteAsync(ProfileArgument argument)
         {
             argument.ApiKey = ApiKey;
             argument.BaseUrl = Url;
 
-            return ExecuteAsync<SearchResponse>(argument.ToString());
+            return ExecuteAsync<ProfileResponse>(argument.ToString());
         }
 
         #endregion Methods
