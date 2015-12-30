@@ -162,14 +162,18 @@
     <Compile Include="Song\SongBucketExtensions.cs" />
     <Compile Include="Song\SongBucketItem.cs" />
     <Compile Include="Song\TracksItem.cs" />
+    <Compile Include="Track\Profile.cs" />
+    <Compile Include="Track\ProfileArgument.cs" />
+    <Compile Include="Track\ProfileResponse.cs" />
+    <Compile Include="Track\TrackBucket.cs" />
+    <Compile Include="Track\TrackBucketExtensions.cs" />
+    <Compile Include="Track\TrackItem.cs" />
     <Compile Include="UriQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Track\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\tools\StyleCop\StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

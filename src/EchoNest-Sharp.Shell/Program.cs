@@ -27,6 +27,7 @@ namespace EchoNest.Shell
                         Console.WriteLine("1: Artist API");
                         Console.WriteLine("2: Song API");
                         Console.WriteLine("3: Playlist API");
+                        Console.WriteLine("4: Track API");
                         Console.WriteLine("=================");
                     }
 
@@ -44,6 +45,9 @@ namespace EchoNest.Shell
                             break;
                         case ConsoleKey.D3:
                             PlaylistShell.Display(session);
+                            break;
+                        case ConsoleKey.D4:
+                            TrackShell.Display(session);
                             break;
                     }
 

@@ -1,5 +1,5 @@
 using System;
-using EchoNest.Song;
+using EchoNest.Track;
 
 namespace EchoNest.Shell
 {
@@ -12,7 +12,7 @@ namespace EchoNest.Shell
             using (ConsoleEx.BeginColorBlock(ConsoleColor.Cyan))
             {
                 Console.WriteLine("=== Track API ===");
-                Console.WriteLine("1: Search");
+                Console.WriteLine("1: Profile");
                 Console.WriteLine("=================");
             }
 
@@ -23,12 +23,12 @@ namespace EchoNest.Shell
             switch (keyInfo.Key)
             {
                 case ConsoleKey.D1:
-                    Search(session);
+                    Profile(session);
                     break;
             }
         }
 
-        private static void Search(EchoNestSession session)
+        private static void Profile(EchoNestSession session)
         {
             ConsoleEx.WriteLine("=== Song Search ===", ConsoleColor.Cyan);
             ConsoleEx.Write("Query >> ", ConsoleColor.Green);
@@ -36,24 +36,21 @@ namespace EchoNest.Shell
 
             ConsoleEx.WriteLine("Searching..", ConsoleColor.Yellow);
 
-            var result = session.Query<Search>().Execute(new SearchArgument
+            string id = "spotify:track:58HONnHW8ZvMDb4In757x4";
+            // id = "TRNATAV144D0B601A7";
+            var result = session.Query<Profile>().Execute(new ProfileArgument
                                                              {
-                                                                 Title = query,
-                                                                 Bucket = SongBucket.ArtistHotttness,
-                                                                 Sort = "artist_hotttnesss-desc"
+                                                                 Id = id,
+                                                                 Bucket = TrackBucket.AudioSummary
                                                              });
 
             if (result.Status.Code == ResponseCode.Success)
             {
-                foreach (var item in result.Songs)
-                {
-                    ConsoleEx.Write("Artist: ", ConsoleColor.White);
-                    ConsoleEx.WriteLine(item.ArtistName, ConsoleColor.DarkYellow);
-                    ConsoleEx.Write("Title: ", ConsoleColor.White);
-                    ConsoleEx.WriteLine(item.Title, ConsoleColor.DarkYellow);
-                    ConsoleEx.Write("Hotttness: ", ConsoleColor.White);
-                    ConsoleEx.WriteLine(item.ArtistHotttnesss.ToString(), ConsoleColor.DarkYellow);
-                }
+                var item = result.Track;
+                ConsoleEx.Write("Artist: ", ConsoleColor.White);
+                ConsoleEx.WriteLine(item.Artist, ConsoleColor.DarkYellow);
+                ConsoleEx.Write("Title: ", ConsoleColor.White);
+                ConsoleEx.WriteLine(item.Title, ConsoleColor.DarkYellow);                
             }
             else
             {
