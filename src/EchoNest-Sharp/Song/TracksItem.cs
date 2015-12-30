@@ -17,5 +17,10 @@ namespace EchoNest.Song
         public string ForeignID { get; set; }
         [DataMember(Name = "id")]
         public string ID { get; set; }
+        [DataMember(Name = "album_type")]
+        public string AlbumType { get; set; }
+
+        [DataMember(Name = "album_date")]
+        public string AlbumDate { get; set; }
     }
 }
