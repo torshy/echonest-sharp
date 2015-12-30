@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist\ArtistBucketItem.cs" />
+    <Compile Include="Artist\ArtistLocation.cs" />
     <Compile Include="Artist\Biography.cs" />
     <Compile Include="Artist\BiographyItem.cs" />
     <Compile Include="Artist\BiographyResponse.cs" />
