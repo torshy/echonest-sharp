@@ -45,6 +45,10 @@ namespace EchoNest.Song
         [Description("id:spotify-WW")]
         IdSpotifyWw = 262144,
         [Description("id:deezer")]
-        IdDeezer = 524288
+        IdDeezer = 524288,
+        [Description("song_discovery")]
+        SongDiscovery = 1048576,
+        [Description("song_discovery_rank")]
+        SongDiscoveryRank = 2097152
     }
 }
