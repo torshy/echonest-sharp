@@ -37,6 +37,7 @@ namespace EchoNest.Shell
             ConsoleEx.WriteLine("Searching..", ConsoleColor.Yellow);
 
             string id = "spotify:track:58HONnHW8ZvMDb4In757x4";
+
             // id = "TRNATAV144D0B601A7";
             var result = session.Query<Profile>().Execute(new ProfileArgument
                                                              {
