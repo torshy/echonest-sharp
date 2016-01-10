@@ -26,5 +26,19 @@ namespace EchoNest.Song
         public double SongHotttnesss { get; set; }
         [DataMember(Name = "tracks")]
         public List<TracksItem> Tracks { get; set; }
+        [DataMember(Name = "song_type")]
+        public List<string> SongType { get; set; }
+        [DataMember(Name = "song_hotttnesss_rank")]
+        public double? SongHotttnesssRank { get; set; }
+        [DataMember(Name = "song_discovery")]
+        public double? SongDiscovery { get; set; }
+        [DataMember(Name = "song_discovery_rank")]
+        public double? SongDiscoveryRank { get; set; }
+        [DataMember(Name = "song_currency")]
+        public double? SongCurrency { get; set; }
+        [DataMember(Name = "song_currency_rank")]
+        public double? SongCurrencyRank { get; set; }
+        [DataMember(Name = "artist_foreign_ids")]
+        public List<Artist.ForeignIdItem> ArtistForeignIds { get; set; }
     }
 }
